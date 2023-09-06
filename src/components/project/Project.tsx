@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Web from "../about/Web";
+import Web from "./Web";
+import App from "./App";
 
 const tabs = [
   {
@@ -41,7 +42,7 @@ function Project() {
             );
           })}
 					</div>
-					{active === 1 ? <Web /> : <></>}
+					{active === 1 ? <Web /> : <App />}
       </div>
     </section>
   );

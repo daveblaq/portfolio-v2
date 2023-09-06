@@ -31,23 +31,24 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-10 transition duration-300 py-4 ${
+      className={`fixed top-0 left-0 w-full z-10 transition duration-300 lg:py-4 py-1 ${
         scrolled ? "bg-[#FEF2F2] shadow-b shadow-sm" : "bg-white"
       }`}
     >
-      <div className="container w-full mx-auto">
-        <div className="w-full flex items-center justify-between">
+      <div className="container lg:w-full mx-auto w-11/12">
+        <div className="w-full flex items-center justify-between py-2">
           <Link to="/" className="w-full flex items-center">
-            <div className="h-[45px] w-[45px] rounded-full border-2 border-white overflow-hidden">
+            <div className="lg:h-[45px] lg:w-[45px] rounded-full h-[35px] w-[35px] border-2 border-white overflow-hidden">
               <img src={profile} alt="Profile" className="w-full h-full" />
             </div>
             <div className="ml-2 ">
-              <h3 className="font-play font-extrabold text-black/70 text-2xl leading-tight">
+              <h3 className="font-play font-extrabold text-black/70 lg:text-2xl text-lg leading-tight">
                 David Oladele
               </h3>
             </div>
           </Link>
-          <div className="flex items-center gap-8">
+          <div className="h-[40px] w-[40px] bg-[#FF3E26] rounded-full lg:hidden flex items-center justify-center "></div>
+          <div className="items-center gap-8 lg:flex hidden">
             <Link
               to="/"
               className={`text-lg font-anon  ${
@@ -76,6 +77,7 @@ function Navbar() {
             >
               Projects
             </Link>
+          
           </div>
         </div>
       </div>
