@@ -1,11 +1,9 @@
-import React from 'react'
-import Image from '../home/Image';
-import { tech } from '../../data/tech';
-import { tools } from '../../data/tools';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Image from "../home/Image";
+import { tech } from "../../data/tech";
+import { tools } from "../../data/tools";
+import { Link } from "react-router-dom";
 import uniuyo from "../../assets/images/uniuyo.jpg";
-
-
 
 interface DataItem {
   id: number;
@@ -16,9 +14,7 @@ interface DataItem {
   url: string;
 }
 function Hero() {
-
-
-	return (
+  return (
     <section className="w-full py-[13rem] bg-white">
       {" "}
       <div className="container mx-auto flex items-center justify-center h-full">
@@ -46,14 +42,13 @@ function Hero() {
               Education
             </h3>
             <div className="mt-5">
-              <div className='flex items-center'>
+              <div className="flex items-center">
                 <div className="h-[90px] w-[90px] rounded-full shadow-md overflow-hidden border border-[#ff3e26]/30 bg-white flex items-center justify-center">
                   <img
                     src={uniuyo}
                     alt="Education"
-                    className="h-[60px] w-[80px]"
+                    className="h-[60px] w-[80px] pointer-events-none"
                   />
-                  
                 </div>
                 <div className="ml-4">
                   <p className="font-inter uppercase font-medium  text-sm leading-tight text-zinc-500 tracking-widest pb-2">
@@ -76,7 +71,7 @@ function Hero() {
               Certain skills I've picked along the way that deserves mentioning:
             </p>
             <p>
-              <span className="font-extrabold text-lg text-[#FF3E26] font-inter">
+              <span className=" text-lg text-[#FF3E26] font-anon underline">
                 Attention to detail:
               </span>
               <span className="font-normal text-lg text-black/50 font-inter pl-2">
@@ -144,4 +139,4 @@ function Hero() {
   );
 }
 
-export default Hero
+export default Hero;

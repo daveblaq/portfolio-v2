@@ -19,7 +19,7 @@ function Experience() {
           <p className="font-anon font-medium  text-xl leading-tight text-black/70 py-2">
             Frontend Developer
           </p>
-          <p className="font-inter uppercase font-medium  text-sm leading-tight text-zinc-500 tracking-widest pb-2">
+          <p className="font-inter uppercase font-medium  text-[12px] leading-tight text-zinc-500 tracking-widest pb-2">
             Oct 11, 2022 - Jan 16, 2023
           </p>
           <p className="tracking-light text-zinc-400 font-inter font-normal">
