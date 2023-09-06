@@ -1,6 +1,5 @@
 import React from "react";
 import hero from "../../assets/images/home-hero.png";
-import Image from "./Image";
 import { socials } from "../../data/socials";
 import { Link } from "react-router-dom";
 import Navbar from "../common/Navbar";
