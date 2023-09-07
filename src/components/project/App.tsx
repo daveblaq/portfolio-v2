@@ -85,14 +85,14 @@ function App() {
           </div>
           <div className="pt-2 flex items-center gap-4">
             <IconButton icon={FaGooglePlay} text="Playstore" />
-            <IconButton icon={FaApple} text="Apple Store" />
+            <IconButton icon={FaApple} text="AppStore" />
           </div>
         </div>
       </div>
     );
   };
   return (
-    <div className="py-10 w-full grid grid-cols-3 gap-12">
+    <div className="py-10 w-full lg:grid lg:grid-cols-3 flex flex-col lg:flex-row gap-12">
       <Item />
       <Item />
       <Item />

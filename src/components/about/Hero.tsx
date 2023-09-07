@@ -67,7 +67,7 @@ function Hero() {
             <h3 className="font-play font-extrabold pt-12 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
               Soft Skills
             </h3>
-            <p className="text-black/50 font-inter lg:text-lg text-base py-8">
+            <p className="text-black/50 font-inter lg:text-lg text-base lg:py-8 py-4">
               Certain skills I've picked along the way that deserves mentioning:
             </p>
             <p>
@@ -78,14 +78,14 @@ function Hero() {
                 I am meticulous when it comes to deliverables.
               </span>
             </p>
-            <h3 className="font-play font-extrabold pt-12 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
+            <h3 className="font-play font-extrabold lg:pt-12 pt-7 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
               Usage
             </h3>
-            <p className="text-black/50 font-inter lg:text-lg text-base pt-8">
+            <p className="text-black/50 font-inter lg:text-lg text-base lg:pt-8 pt-4">
               Tools, technologies and gadgets I use on a daily basis but not
               limited to.
             </p>
-            <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
+            <h3 className="font-play font-extrabold lg:pt-9 pt-7 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
               Technologies
             </h3>
             <div>

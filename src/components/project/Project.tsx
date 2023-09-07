@@ -20,19 +20,19 @@ interface DataItem {
 function Project() {
   const [active, setActive] = useState(1);
   return (
-    <section className="py-[80px] w-full bg-white">
+    <section className="lg:py-[80px] py-[50px] lg:w-full bg-white w-11/12 mx-auto">
       <div className=" container mx-auto flex flex-col items-start h-full">
-        <div className="flex items-center border-b border-[#FF3E26] w-full">
+        <div className="flex items-center  border-b border-[#FF3E26] w-full">
           {tabs.map((item: DataItem, index) => {
             return (
               <div
-                className={`py-6 px-5 ${
+                className={`lg:py-6 py-3 px-5 lg:justify-start flex lg:items-start items-center lg:w-[280px] w-full justify-center ${
                   item?.id === active ? `bg-[#FF3E26]` : ``
                 }`}
                 onClick={() => setActive(item?.id)}
               >
                 <h3
-                  className={`font-anon text-lg cursor-pointer ${
+                  className={`font-anon lg:text-lg text-base cursor-pointer ${
                     item?.id === active ? `text-white` : `text-[#FF3E26]`
                   }`}
                 >

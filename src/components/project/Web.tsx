@@ -42,7 +42,7 @@ function Web() {
     );
   };
   return (
-    <div className="py-10 w-full grid grid-cols-3 gap-12">
+    <div className="py-10 w-full lg:grid lg:grid-cols-3 flex flex-col lg:flex-row gap-12">
       <Item />
       <Item />
       <Item />
