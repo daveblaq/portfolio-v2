@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import profile from "../../assets/images/profile.jpg";
 import { Link, useLocation } from "react-router-dom";
+import { HiMenuAlt4 } from "react-icons/hi";
+import { RiCloseFill } from "react-icons/ri";
+import MobileNav from "./MobileNav";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   //assigning location variable
   const location = useLocation();
 
+    const [open, setOpen] = useState(false);
   //destructuring pathname from location
-	const { pathname } = location;
-	
+  const { pathname } = location;
+
   const splitLocation = pathname.split("/");
 
   useEffect(() => {
@@ -30,58 +34,101 @@ function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-10 transition duration-300 lg:py-4 py-1 ${
-        scrolled ? "bg-[#FEF2F2] shadow-b shadow-sm" : "bg-white"
-      }`}
-    >
-      <div className="container lg:w-full mx-auto w-11/12">
-        <div className="w-full flex items-center justify-between py-2">
-          <Link to="/" className="w-full flex items-center">
-            <div className="lg:h-[45px] lg:w-[45px] rounded-full h-[35px] w-[35px] border-2 border-white overflow-hidden">
-              <img src={profile} alt="Profile" className="w-full h-full" />
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-10 transition duration-300 lg:py-4 py-1 ${
+          scrolled ? "bg-[#FEF2F2] shadow-b shadow-sm" : "bg-white"
+        }`}
+      >
+        <div className="container lg:w-full mx-auto w-11/12">
+          <div className="w-full flex items-center justify-between py-3">
+            <Link to="/" className="w-full flex items-center">
+              <div className="lg:h-[45px] lg:w-[45px] rounded-full h-[35px] w-[35px] border-2 border-white overflow-hidden">
+                <img src={profile} alt="Profile" className="w-full h-full" />
+              </div>
+              <div className="ml-2 ">
+                <h3 className="font-play font-extrabold text-black/70 lg:text-2xl text-lg leading-tight">
+                  David Oladele
+                </h3>
+              </div>
+            </Link>
+            <div
+              className="h-[40px] w-[40px] bg-[#FF3E26] rounded-full lg:hidden flex items-center justify-center cursor-pointer "
+              onClick={() => setOpen(!open)}
+            >
+              {open ? (
+                <RiCloseFill className="text-white text-[30px]" />
+              ) : (
+                <HiMenuAlt4 className="text-white text-[30px]" />
+              )}
             </div>
-            <div className="ml-2 ">
-              <h3 className="font-play font-extrabold text-black/70 lg:text-2xl text-lg leading-tight">
-                David Oladele
-              </h3>
+            <div className="items-center gap-8 lg:flex hidden">
+              <Link
+                to="/"
+                className={`text-lg font-anon  ${
+                  splitLocation[1] === "" ? `text-[#FF3E26]` : `text-black/70`
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about-me"
+                className={`text-lg font-anon  ${
+                  splitLocation[1] === "about-me"
+                    ? `text-[#FF3E26]`
+                    : `text-black/70`
+                }`}
+              >
+                About
+              </Link>
+              <Link
+                to="/projects"
+                className={`text-lg font-anon  ${
+                  splitLocation[1] === "projects"
+                    ? `text-[#FF3E26]`
+                    : `text-black/70`
+                }`}
+              >
+                Projects
+              </Link>
             </div>
-          </Link>
-          <div className="h-[40px] w-[40px] bg-[#FF3E26] rounded-full lg:hidden flex items-center justify-center "></div>
-          <div className="items-center gap-8 lg:flex hidden">
-            <Link
-              to="/"
-              className={`text-lg font-anon  ${
-                splitLocation[1] === "" ? `text-[#FF3E26]` : `text-black/70`
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about-me"
-              className={`text-lg font-anon  ${
-                splitLocation[1] === "about-me"
-                  ? `text-[#FF3E26]`
-                  : `text-black/70`
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              to="/projects"
-              className={`text-lg font-anon  ${
-                splitLocation[1] === "projects"
-                  ? `text-[#FF3E26]`
-                  : `text-black/70`
-              }`}
-            >
-              Projects
-            </Link>
-          
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      {open && (
+        <div className="w-full bg-white h-screen px-[16px] py-[150px]">
+          <div className="flex flex-col w-full items-center gap-[58px]">
+            <Link to="/">
+              <h3
+                className={` text-xl font-medium font-anon ${
+                  splitLocation[1] === "" ? `text-[#FF3E26]` : `text-black/50`
+                }`}
+              >
+                Home
+              </h3>
+            </Link>
+            <Link to="/about-me">
+              <h3
+                className={` text-xl font-medium font-anon ${
+                  splitLocation[1] === "about-me" ? `text-[#FF3E26]` : `text-black/50`
+                }`}
+              >
+               About
+              </h3>
+            </Link>
+            <Link to="/projects">
+              <h3
+                className={` text-xl font-medium font-anon ${
+                  splitLocation[1] === "projects" ? `text-[#FF3E26]` : `text-black/50`
+                }`}
+              >
+                Projects
+              </h3>
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

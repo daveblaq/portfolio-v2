@@ -23,9 +23,9 @@ function Hero() {
 
       <div className="absolute inset-0" style={overlayStyle}></div>
       <div className="absolute inset-0 w-full">
-        <div className="z-10 container mx-auto lg:py-[100px] py-[100px] flex items-center justify-center h-full lg:w-full w-11/12">
-          <Navbar />
-          <div className="w-full flex justify-start gap-[24px]">
+        <div className="z-10  mx-auto lg:py-[100px] py-[100px] flex items-center justify-center h-full ">
+          {/* <Navbar /> */}
+          <div className="container lg:w-full w-11/12 flex justify-start gap-[24px]">
             <div className=" h-full w-full lg:max-w-2xl max-w-2xl">
               <h3 className="font-play font-extrabold lg:text-7xl text-4xl text-[#FF3E26]">
                 Software Engineer
@@ -42,7 +42,11 @@ function Hero() {
                 {socials.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
-                    <Link to="" key={index} className="flex items-center lg:py-6 py-2">
+                    <Link
+                      to=""
+                      key={index}
+                      className="flex items-center lg:py-6 py-2"
+                    >
                       <Icon className="text-[#FF3E26] text-xl" />
                       <p className="text-base text-white/50 hover:text-[#FF3E26] transition duration-300 ease-in-out font-anon pl-3">
                         {item?.text}
