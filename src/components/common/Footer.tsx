@@ -23,7 +23,7 @@ function Footer() {
           <div className="w-full flex flex-col lg:flex-row items-center lg:py-[9rem] py-[4rem]">
             <div className="lg:w-[70%] w-full">
               <h3 className="font-play text-white lg:text-9xl text-4xl font-extrabold">
-                Follow me
+               Contact me
               </h3>
               <div className="w-[40%] h-[12px] bg-[#FF3E26] mt-12 lg:block hidden"></div>
             </div>

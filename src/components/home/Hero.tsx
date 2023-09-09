@@ -10,6 +10,7 @@ interface DataItem {
   id: number;
   icon: any;
   text: string;
+  url: string;
 }
 function Hero() {
   const overlayStyle = {
@@ -43,7 +44,7 @@ function Hero() {
                   const Icon = item?.icon;
                   return (
                     <Link
-                      to=""
+                      to={item?.url}
                       key={index}
                       className="flex items-center lg:py-6 py-2"
                     >
