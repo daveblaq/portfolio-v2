@@ -29,7 +29,7 @@ function Experience() {
               className=" rounded-full bg-cover pointer-events-none"
             />
           </div>
-          <div className="border-[0.8px] h-[15rem] border-[#FF3E26] rotate-180"></div>
+          <div className="border-[0.8px] h-[15rem] border-[#FF3E26]/30 rotate-180"></div>
         </div>
         <div className="lg:ml-8 ml-4">
           <h3 className="font-play font-extrabold  lg:text-2xl text-xl leading-tight text-black/70">

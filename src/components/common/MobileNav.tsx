@@ -9,7 +9,7 @@ function MobileNav() {
 
   const splitLocation = pathname.split("/");
   return (
-    <div className="w-full bg-white h-screen px-[16px] py-[150px] absolute">
+    <div className="w-full bg-white h-screen px-[16px] py-[150px]">
       <div className="flex flex-col w-full items-center gap-[58px]">
         <Link to="/">
           <h3
