@@ -26,7 +26,7 @@ function Project() {
           {tabs.map((item: DataItem, index) => {
             return (
               <div
-                className={`lg:py-6 py-3 px-5 lg:justify-start flex lg:items-start items-center lg:w-[280px] w-full justify-center ${
+                className={`lg:py-4 py-3 px-5 lg:justify-center flex lg:items-center items-center lg:w-[280px] w-full justify-center ${
                   item?.id === active ? `bg-[#FF3E26]` : ``
                 }`}
                 onClick={() => setActive(item?.id)}

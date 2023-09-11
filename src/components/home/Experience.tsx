@@ -18,7 +18,9 @@ interface ItemProps {
   item?: any;
 }
 function Experience() {
-	const Item: React.FC<ItemProps> = ({ item }) => {
+
+
+const Item: React.FC<ItemProps> = ({ item }) => {
     return (
       <div className="w-full inline-flex">
         <div className="flex flex-col justify-between items-center">
@@ -50,7 +52,9 @@ function Experience() {
         </div>
       </div>
     );
-  };
+};
+  
+  
 		return (
       <section className="w-full  lg:h-full h-full lg:py-[6.6rem]  py-[4rem] relative bg-white">
         <div className="lg:w-full w-11/12 container mx-auto">

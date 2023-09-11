@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../home/Image";
 import { tech } from "../../data/tech";
 import { tools } from "../../data/tools";
+import { gadgets } from "../../data/gadgets";
 import { Link } from "react-router-dom";
 import uniuyo from "../../assets/images/uniuyo.jpg";
 
@@ -137,6 +138,31 @@ function Hero() {
             </h3>
             <div>
               {tools.map((item: DataItem, index) => {
+                const Icon = item?.icon;
+                return (
+                  <div className="flex items-center ml-3 py-3">
+                    <Link to={item?.url} className="flex items-center">
+                      <Icon
+                        color={item?.color}
+                        className={`lg:text-3xl text-2xl`}
+                      />
+                      <h3 className="lg:text-lg text-base underline text-[#FF3E26] font-anon pl-3">
+                        {item?.tech}
+                      </h3>
+                    </Link>
+                    <p className="lg:text-lg text-base text-zinc-500 pl-2">
+                      {" "}
+                      - {item?.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+            <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
+              Gadgets
+            </h3>
+            <div>
+              {gadgets.map((item: DataItem, index) => {
                 const Icon = item?.icon;
                 return (
                   <div className="flex items-center ml-3 py-3">

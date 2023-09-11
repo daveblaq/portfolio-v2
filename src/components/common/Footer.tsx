@@ -8,6 +8,7 @@ interface DataItem {
   id: number;
   icon: any;
   text: string;
+  url: string;
 }
 function Footer() {
 
@@ -32,7 +33,7 @@ function Footer() {
                 const Icon = item?.icon;
                 return (
                   <Link
-                    to=""
+                    to={item?.url}
                     key={index}
                     className="flex items-center justify-center rounded-full lg:h-[80px] lg:w-[80px] h-[60px] w-[60px] bg-[#FF3E26]"
                   >
