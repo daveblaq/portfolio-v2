@@ -6,16 +6,28 @@ import bfwc from "../assets/images/bfwc.png"
 import eduford from "../assets/images/eduford.png"
 import plutus from "../assets/images/plutus-home.png"
 import cite from "../assets/images/cite.png"
+import rareket from "../assets/images/rareket-home.png"
+import lamba from "../assets/images/lamba-home.png"
+import portfolio from "../assets/images/portfolio.png"
 
 
 export const webprojects = [
+  {
+    id: 1,
+    text: "Portfolio V2",
+    url: "https://oladeledavid.codes",
+    image: portfolio,
+    description: "",
+    stack: ["React", "Typescript", "Tailwind CSS"],
+    github: null,
+  },
   {
     id: 1,
     text: "Protis Studios",
     url: "https://protishq.com",
     image: protishome,
     description: "",
-    stack: ["React", "Tailwind CSS"],
+    stack: ["React", "Tailwind CSS", "CSS"],
     github: null,
   },
   {
@@ -47,6 +59,15 @@ export const webprojects = [
   },
   {
     id: 1,
+    text: "Lambatoken Brand Onboarding",
+    url: "https://brand-onboarding.vercel.app/",
+    image: lamba,
+    description: "",
+    stack: ["React", "Javascript", "Bootstrap", "AOS"],
+    github: null,
+  },
+  {
+    id: 1,
     text: "Buy Food With Crypto",
     url: "https://buy-food-with-crypto.vercel.app/",
     image: bfwc,
@@ -56,9 +77,18 @@ export const webprojects = [
   },
   {
     id: 1,
+    text: "Rareket NFT Marketplace",
+    url: "https://rareket-v2.vercel.app/",
+    image: rareket,
+    description: "",
+    stack: ["React", "Javascript", "Tailwind CSS"],
+    github: null,
+  },
+  {
+    id: 1,
     text: "Eduford",
     url: "https://edufolduniversity.netlify.app/",
-    image:eduford,
+    image: eduford,
     description: "",
     stack: ["HTML", "CSS"],
     github: "https://github.com/daveblaq/university-website",
