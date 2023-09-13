@@ -10,7 +10,7 @@ export const work = [
   {
     id: 1,
     company: "Protis Studios",
-    role: "Co-Founder/C.T.O",
+    role: "Engineering Lead",
     image: protis,
     start: "OCT, 20 2022",
     end: "PRESENT",
@@ -54,7 +54,7 @@ export const work = [
   {
     id: 5,
     company: "Rareket Tech Solutions",
-    role: "Project Manager/Lead Developer - Full Time",
+    role: "Project Manager/Lead Developer - Project Based",
     image: rareket,
     start: "JAN, 15 2023",
     end: "JUL, 25 2023",
