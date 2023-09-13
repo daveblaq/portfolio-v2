@@ -45,8 +45,8 @@ export const work = [
     company: "Plutus Tech Solutions",
     role: "Frontend Developer - Contract",
     image: plutus,
-    start: "JAN, 15 2023",
-    end: "JUL, 25 2023",
+    start: "JAN, 20 2021",
+    end: "AUG, 25 2021",
     status: 0,
     description:
       "My primary focus was on creating an intuitive and user-friendly interface for the company's website, ensuring a seamless experience for customers as the sole frontend dev. Throughout the project, I encountered various challenges, from browser compatibility issues to optimizing performance for different devices. I had to use problem-solving skills to identify these issues and iterate on solutions to provide users with a smooth and consistent experience. ",
@@ -56,8 +56,8 @@ export const work = [
     company: "Rareket Tech Solutions",
     role: "Project Manager/Lead Developer - Project Based",
     image: rareket,
-    start: "JAN, 15 2023",
-    end: "JUL, 25 2023",
+    start: "AUG, 27 2022",
+    end: "JAN, 05 2023",
     status: 0,
     description:
       "As a Project Manager for the NFT marketplace and tech team, I play a pivotal role in orchestrating the successful planning, execution, and delivery of the projects.",

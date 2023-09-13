@@ -31,10 +31,10 @@ export const socials = [
     text: "Instagram",
     url: "https://www.instagram.com/_davidblaq/",
   },
-  {
-    id: 5,
-    icon: RiYoutubeFill,
-    text: "Youtube",
-    url: "https://www.youtube.com/@davcodes",
-  },
+  // {
+  //   id: 5,
+  //   icon: RiYoutubeFill,
+  //   text: "Youtube",
+  //   url: "https://www.youtube.com/@davcodes",
+  // },
 ];

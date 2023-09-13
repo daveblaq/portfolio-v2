@@ -158,7 +158,7 @@ function Hero() {
                 );
               })}
             </div>
-            <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
+            {/* <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
               Gadgets
             </h3>
             <div>
@@ -182,7 +182,7 @@ function Hero() {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
           <div className="">
             <Image />
