@@ -21,8 +21,9 @@ function Hero() {
       <div className="container mx-auto flex items-center justify-center h-full lg:w-full w-11/12">
         <div className="w-full flex flex-col-reverse lg:flex-row justify-between gap-[24px]">
           <div className=" h-full w-full lg:max-w-2xl max-w-2xl">
-            <h3 className="font-play font-extrabold lg:text-4xl text-2xl text-black/70 basis-1/2 ">
-              I'm Oladele David. I live in Nigeria, where I build the future.
+            <h3 className="font-play font-extrabold lg:text-4xl text-2xl text-black/70 basis-1/2 lg:leading-normal">
+              I'm Oladele David. I live in South Africa, where I build the
+              future.
             </h3>
 
             <p className="font-inter text-black/50 lg:text-lg text-base font-normal leading-relaxed lg:pt-12 pt-5">
