@@ -1,10 +1,10 @@
 import protis from "../assets/images/ps-logo.jpg";
-import maalexi from "../assets/images/maalexi.jpg"
-import lamba from "../assets/images/lambatoken.jpg"
-import fiverr from "../assets/images/fiverr.jpg"
-import rareket from "../assets/images/rareket.png"
-import plutus from "../assets/images/plutus.jpg"
-import sidehustle from "../assets/images/sidehustle.jpg"
+import maalexi from "../assets/images/maalexi.jpg";
+import lamba from "../assets/images/lambatoken.jpg";
+import fiverr from "../assets/images/fiverr.jpg";
+import rareket from "../assets/images/rareket.png";
+import plutus from "../assets/images/plutus.jpg";
+import sidehustle from "../assets/images/sidehustle.jpg";
 
 export const work = [
   {
@@ -72,16 +72,5 @@ export const work = [
     status: 0,
     description:
       "I had the opportunity to collaborate closely with a team to create an efficient web application as part of the task during my internship",
-  },
-  {
-    id: 7,
-    company: "Fiverr",
-    role: "PHP Web Developer - Freelance",
-    image: fiverr,
-    start: "FEB, 15 2015",
-    end: "AUG, 08 2018",
-    status: 0,
-    description:
-      "I had the opportunity to collaborate closely with teams and Clients to develop efficient web applications using PHP and MySQL.My role required continuous learning to stay updated with the latest PHP developments and security best practices. Effective communication with clients was crucial, as I had to understand their requirements, provide regular project updates, and address any concerns promptly.",
   },
 ];

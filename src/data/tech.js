@@ -52,14 +52,6 @@ export const tech = [
     url: "https://",
   },
   {
-    id: 6,
-    icon: FaPhp,
-    tech: "PHP",
-    text: "Server Side Scripting Language",
-    color: "#3378c5",
-    url: "https://",
-  },
-  {
     id: 7,
     icon: FaNodeJs,
     tech: "Node.js",
