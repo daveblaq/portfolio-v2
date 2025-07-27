@@ -1,19 +1,130 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DarkModeContext } from "../../App";
 
 function Hero() {
+  const { isDarkMode } = useContext(DarkModeContext);
+
   return (
-    <section className="lg:pt-[150px] pt-[100px] w-full bg-white">
-      <div className=" container mx-auto flex items-start h-full lg:w-full w-11/12">
-        <div className=" h-full w-full lg:max-w-2xl max-w-2xl">
-          <h3 className="font-play font-extrabold lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
-            Projects
-          </h3>
-          <p className="font-inter text-black/50 lg:text-lg text-base font-normal leading-relaxed lg:pt-7 pt-4">
-            I've worked on tons of little projects over the years but these are
-            the ones that I'm most proud of. Many of them are open-source, so if
-            you see something that piques your interest, check out the code and
-            contribute if you have ideas on how it can be improved.
+    <section
+      className={`pt-32 pb-16 transition-colors duration-300 ${
+        isDarkMode ? "bg-slate-900" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Badge */}
+          <div
+            className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-6 ${
+              isDarkMode
+                ? "bg-primary-900/20 border-primary-400 text-primary-300"
+                : "bg-primary-50 border-primary-700 text-primary-700"
+            }`}
+          >
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              />
+            </svg>
+            Portfolio Showcase
+          </div>
+
+          {/* Main Heading */}
+          <h1
+            className={`text-4xl lg:text-5xl font-bold mb-6 ${
+              isDarkMode ? "text-white" : "text-slate-900"
+            }`}
+          >
+            Featured Projects
+          </h1>
+
+          {/* Description */}
+          <p
+            className={`text-xl leading-relaxed mb-8 ${
+              isDarkMode ? "text-slate-300" : "text-slate-600"
+            }`}
+          >
+            A collection of projects that showcase my expertise in modern web
+            development, mobile applications, and user experience design. Each
+            project represents a unique challenge and solution.
           </p>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+            <div
+              className={`text-center p-6 rounded-2xl border ${
+                isDarkMode
+                  ? "bg-slate-800 border-slate-700"
+                  : "bg-slate-50 border-slate-200"
+              }`}
+            >
+              <div
+                className={`text-3xl font-bold mb-2 ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                25+
+              </div>
+              <div
+                className={`text-sm font-medium ${
+                  isDarkMode ? "text-slate-300" : "text-slate-600"
+                }`}
+              >
+                Projects Completed
+              </div>
+            </div>
+            <div
+              className={`text-center p-6 rounded-2xl border ${
+                isDarkMode
+                  ? "bg-slate-800 border-slate-700"
+                  : "bg-slate-50 border-slate-200"
+              }`}
+            >
+              <div
+                className={`text-3xl font-bold mb-2 ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                5+
+              </div>
+              <div
+                className={`text-sm font-medium ${
+                  isDarkMode ? "text-slate-300" : "text-slate-600"
+                }`}
+              >
+                Years Experience
+              </div>
+            </div>
+            <div
+              className={`text-center p-6 rounded-2xl border ${
+                isDarkMode
+                  ? "bg-slate-800 border-slate-700"
+                  : "bg-slate-50 border-slate-200"
+              }`}
+            >
+              <div
+                className={`text-3xl font-bold mb-2 ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                8+
+              </div>
+              <div
+                className={`text-sm font-medium ${
+                  isDarkMode ? "text-slate-300" : "text-slate-600"
+                }`}
+              >
+                Technologies Used
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

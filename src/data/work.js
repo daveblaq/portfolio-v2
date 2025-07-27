@@ -1,10 +1,6 @@
 import protis from "../assets/images/ps-logo.jpg";
 import maalexi from "../assets/images/maalexi.jpg";
 import lamba from "../assets/images/lambatoken.jpg";
-import fiverr from "../assets/images/fiverr.jpg";
-import rareket from "../assets/images/rareket.png";
-import plutus from "../assets/images/plutus.jpg";
-import sidehustle from "../assets/images/sidehustle.jpg";
 
 export const work = [
   {
@@ -39,38 +35,5 @@ export const work = [
     status: 0,
     description:
       "I had the opportunity to collaborate closely with a team to create an efficient web application (React/Bootstrap) and mobile app (React Native).I conducted thorough testing, debugging, and optimization to guarantee that the mobile application could handle the growing user base and demands.Active participation in the technical development process of the entire platform. This involved writing code, implementing features, and integrating functionalities that would streamline the app's demands.",
-  },
-  {
-    id: 4,
-    company: "Plutus Tech Solutions",
-    role: "Frontend Developer - Contract",
-    image: plutus,
-    start: "JAN, 20 2021",
-    end: "AUG, 25 2021",
-    status: 0,
-    description:
-      "My primary focus was on creating an intuitive and user-friendly interface for the company's website, ensuring a seamless experience for customers as the sole frontend dev. Throughout the project, I encountered various challenges, from browser compatibility issues to optimizing performance for different devices. I had to use problem-solving skills to identify these issues and iterate on solutions to provide users with a smooth and consistent experience. ",
-  },
-  {
-    id: 5,
-    company: "Rareket Tech Solutions",
-    role: "Project Manager/Lead Developer - Project Based",
-    image: rareket,
-    start: "AUG, 27 2022",
-    end: "JAN, 05 2023",
-    status: 0,
-    description:
-      "As a Project Manager for the NFT marketplace and tech team, I play a pivotal role in orchestrating the successful planning, execution, and delivery of the projects.",
-  },
-  {
-    id: 6,
-    company: "Sidehustle",
-    role: "React Intern",
-    image: sidehustle,
-    start: "OCT, 12 2021",
-    end: "JAN, 08 2022",
-    status: 0,
-    description:
-      "I had the opportunity to collaborate closely with a team to create an efficient web application as part of the task during my internship",
   },
 ];

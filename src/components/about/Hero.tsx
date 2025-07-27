@@ -1,10 +1,9 @@
-import React from "react";
-import Image from "../home/Image";
+import React, { useContext } from "react";
 import { tech } from "../../data/tech";
 import { tools } from "../../data/tools";
-import { gadgets } from "../../data/gadgets";
 import { Link } from "react-router-dom";
 import uniuyo from "../../assets/images/uniuyo.jpg";
+import { DarkModeContext } from "../../App";
 
 interface DataItem {
   id: number;
@@ -14,179 +13,404 @@ interface DataItem {
   color: string;
   url: string;
 }
-function Hero() {
-  return (
-    <section className="w-full lg:py-[13rem] py-[10rem] bg-white">
-      {" "}
-      <div className="container mx-auto flex items-center justify-center h-full lg:w-full w-11/12">
-        <div className="w-full flex flex-col-reverse lg:flex-row justify-between gap-[24px]">
-          <div className=" h-full w-full lg:max-w-2xl max-w-2xl">
-            <h3 className="font-play font-extrabold lg:text-4xl text-2xl text-black/70 basis-1/2 lg:leading-normal">
-              I'm Oladele David. I live in South Africa, where I build the
-              future.
-            </h3>
 
-            <p className="font-inter text-black/50 lg:text-lg text-base font-normal leading-relaxed lg:pt-12 pt-5">
-              Over the years, I've had the privilege of crafting intuitive and
-              visually appealing user interfaces that not only meet but exceed
-              user expectations. My journey in the world of coding has been an
-              exciting one, filled with a deep passion for creating seamless web
-              experiences. I thrive on challenges and am always eager to explore
-              the latest trends and technologies in the ever-evolving frontend
-              landscape. Whether it's harnessing the power of React, Typescript,
-              or React Native, I'm all about crafting pixel-perfect, responsive
-              designs that make an impact.
-            </p>
-            <p className="font-inter text-black/50 lg:text-lg text-base font-normal leading-relaxed lg:pt-6 pt-5">
-              I'm currently open to exciting job opportunities and
-              collaborations that allow me to leverage my expertise to build
-              remarkable web applications. If you're looking to bring your
-              project to life, improve your user experience, or embark on a
-              frontend adventure, I'm your go-to collaborator!
-            </p>
-            <div className="border border-[#FF3E26]/30 bg-white w-full mt-8 overflow-hidden rounded-[8px] lg:p-10 p-5">
-              <p className="font-anon text-zinc-500 lg:text-lg text-base font-semibold">
-                If you ever spot me in the wild, don't hesitate to say hello!
-                Let's grab a cup of coffee ☕ and geek out over the latest
-                advancements in front-end development or discuss our favorite
-                programming language.
-              </p>
+function Hero() {
+  const { isDarkMode } = useContext(DarkModeContext);
+
+  return (
+    <section
+      className={`py-24 transition-colors duration-300 ${
+        isDarkMode ? "bg-slate-900" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="text-center my-12">
+          <div
+            className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-6 ${
+              isDarkMode
+                ? "bg-primary-900/20 border-primary-400 text-primary-300"
+                : "bg-primary-50 border-primary-700 text-primary-700"
+            }`}
+          >
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+            About Me
+          </div>
+          <h1
+            className={`text-4xl lg:text-5xl font-bold mb-6 ${
+              isDarkMode ? "text-white" : "text-slate-900"
+            }`}
+          >
+            Crafting Digital Experiences
+          </h1>
+          <p
+            className={`text-xl max-w-3xl mx-auto leading-relaxed ${
+              isDarkMode ? "text-slate-300" : "text-slate-600"
+            }`}
+          >
+            A passionate software engineer with a love for clean code, beautiful
+            interfaces, and solving complex problems through elegant solutions.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Column - Content */}
+          <div className="space-y-12">
+            {/* Personal Story */}
+            <div className="space-y-6">
+              <h2
+                className={`text-2xl lg:text-3xl font-bold ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                My Story
+              </h2>
+              <div className="prose prose-slate max-w-none dark:prose-invert">
+                <p
+                  className={`text-lg leading-relaxed ${
+                    isDarkMode ? "text-slate-300" : "text-slate-600"
+                  }`}
+                >
+                  I'm{" "}
+                  <span
+                    className={`font-semibold ${
+                      isDarkMode ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    David Oladele
+                  </span>
+                  , I love building clean, user-friendly interfaces that make
+                  technology feel effortless. I enjoy turning ideas into
+                  functional, polished products that not only work seamlessly
+                  but also look great. From concept to deployment, I stay
+                  focused on creating experiences that truly solve real user
+                  problems and feel intuitive to use.
+                </p>
+              </div>
             </div>
-            <h3 className="font-play font-extrabold pt-12 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
-              Education
-            </h3>
-            <div className="mt-5 w-full">
-              <div className="flex items-center w-full">
-                <div className="lg:h-[90px] lg:w-[90px] w-[80px] h-[80px] rounded-full shadow-md overflow-hidden border border-[#ff3e26]/30 bg-white flex p-1 items-center justify-center">
-                  <img
-                    src={uniuyo}
-                    alt="Education"
-                    className=" pointer-events-none"
-                  />
+
+            {/* Education */}
+            <div className="space-y-6">
+              <h2
+                className={`text-2xl lg:text-3xl font-bold ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                Education
+              </h2>
+              <div
+                className={`rounded-2xl p-6 border ${
+                  isDarkMode
+                    ? "bg-gradient-to-r from-slate-800 to-slate-700 border-slate-600"
+                    : "bg-gradient-to-r from-slate-50 to-slate-100 border-slate-200"
+                }`}
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div
+                      className={`w-16 h-16 rounded-2xl border-2 shadow-sm flex items-center justify-center overflow-hidden ${
+                        isDarkMode
+                          ? "bg-slate-800 border-slate-600"
+                          : "bg-white border-slate-200"
+                      }`}
+                    >
+                      <img
+                        src={uniuyo}
+                        alt="University of Uyo"
+                        className="w-12 h-12 object-cover rounded-lg"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className={`text-lg font-bold mb-1 ${
+                        isDarkMode ? "text-white" : "text-slate-900"
+                      }`}
+                    >
+                      B.Sc.(Ed.) Computer and Robotics Education
+                    </h3>
+                    <p
+                      className={`mb-2 ${
+                        isDarkMode ? "text-slate-300" : "text-slate-600"
+                      }`}
+                    >
+                      University of Uyo, Nigeria
+                    </p>
+                    <p
+                      className={`text-sm ${
+                        isDarkMode ? "text-slate-400" : "text-slate-500"
+                      }`}
+                    >
+                      March 2018 - August 2023
+                    </p>
+                  </div>
                 </div>
-                <div className="lg:ml-4 ml-3">
-                  <p className="font-inter uppercase font-medium  lg:text-sm text-[10px] leading-tight text-zinc-500 tracking-widest pb-2">
-                    March 11, 2018 - August 31, 2023
+              </div>
+            </div>
+
+            {/* Core Skills */}
+            <div className="space-y-6">
+              <h2
+                className={`text-2xl lg:text-3xl font-bold ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                Core Skills
+              </h2>
+              <div className="grid gap-4">
+                <div
+                  className={`rounded-md p-6 border shadow-sm ${
+                    isDarkMode
+                      ? "bg-slate-800 border-slate-700"
+                      : "bg-white border-slate-200"
+                  }`}
+                >
+                  <h3
+                    className={`font-semibold mb-2 ${
+                      isDarkMode ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    Attention to Detail
+                  </h3>
+                  <p
+                    className={`text-sm ${
+                      isDarkMode ? "text-slate-300" : "text-slate-600"
+                    }`}
+                  >
+                    I am meticulous when it comes to deliverables, ensuring
+                    every pixel and line of code meets the highest standards.
                   </p>
-                  <p className="font-anon uppercase font-medium  lg:text-base text-sm leading-tight text-zinc-500 tracking-widest pb-2 lg:w-full w-[80%]">
-                    <span className="text-[#ff3e26]">B.Sc.(Ed.)</span> in
-                    Computer and Robotics Education
+                </div>
+                <div
+                  className={`rounded-md p-6 border shadow-sm ${
+                    isDarkMode
+                      ? "bg-slate-800 border-slate-700"
+                      : "bg-white border-slate-200"
+                  }`}
+                >
+                  <h3
+                    className={`font-semibold mb-2 ${
+                      isDarkMode ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    Communication
+                  </h3>
+                  <p
+                    className={`text-sm ${
+                      isDarkMode ? "text-slate-300" : "text-slate-600"
+                    }`}
+                  >
+                    I facilitate regular team meetings, provide project updates
+                    to stakeholders, and serve as a central point of contact for
+                    project-related matters.
                   </p>
-                  <p className="font-inter uppercase font-medium  lg:text-[12px] text-[10px] leading-tight text-zinc-500 tracking-widest pb-2">
-                    (Akwa-Ibom, Uyo, Nigeria)
+                </div>
+                <div
+                  className={`rounded-md p-6 border shadow-sm ${
+                    isDarkMode
+                      ? "bg-slate-800 border-slate-700"
+                      : "bg-white border-slate-200"
+                  }`}
+                >
+                  <h3
+                    className={`font-semibold mb-2 ${
+                      isDarkMode ? "text-white" : "text-slate-900"
+                    }`}
+                  >
+                    Problem Solving
+                  </h3>
+                  <p
+                    className={`text-sm ${
+                      isDarkMode ? "text-slate-300" : "text-slate-600"
+                    }`}
+                  >
+                    I approach complex challenges with analytical thinking and
+                    creative solutions, always focusing on the user experience.
                   </p>
                 </div>
               </div>
             </div>
-            <h3 className="font-play font-extrabold pt-12 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
-              Soft Skills
-            </h3>
-            <p className="text-black/50 font-inter lg:text-lg text-base lg:py-8 py-4">
-              Certain skills I've picked along the way that deserves mentioning:
-            </p>
-            <p>
-              <span className=" lg:text-lg text-base text-[#FF3E26] font-anon underline">
-                Attention to detail:
-              </span>
-              <span className="font-normal lg:text-lg text-base text-black/50 font-inter pl-2">
-                I am meticulous when it comes to deliverables.
-              </span>
-            </p>
-            <p className="pt-3">
-              <span className=" lg:text-lg text-base text-[#FF3E26] font-anon underline">
-                Communication:
-              </span>
-              <span className="font-normal lg:text-lg text-base text-black/50 font-inter pl-2">
-                I facilitate regular team meetings, provide project updates to
-                stakeholders, and serve as a central point of contact for
-                project-related matters.
-              </span>
-            </p>
-            <h3 className="font-play font-extrabold lg:pt-12 pt-7 lg:text-4xl text-2xl text-black/70 basis-1/2 leading-[48px]">
-              Usage
-            </h3>
-            <p className="text-black/50 font-inter lg:text-lg text-base lg:pt-8 pt-4">
-              Tools, technologies and gadgets I use on a daily basis but not
-              limited to.
-            </p>
-            <h3 className="font-play font-extrabold lg:pt-9 pt-7 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
-              Technologies
-            </h3>
-            <div>
-              {tech.map((item: DataItem, index) => {
-                const Icon = item?.icon;
-                return (
-                  <div className="flex items-center ml-3 py-3">
-                    <Link to={item?.url} className="flex items-center">
-                      <Icon
-                        color={item?.color}
-                        className={`lg:text-3xl text-2xl`}
-                      />
-                      <h3 className="lg:text-lg text-base underline text-[#FF3E26] font-anon pl-3">
-                        {item?.tech}
-                      </h3>
-                    </Link>
-                    <p className="lg:text-lg text-base text-zinc-500 pl-2">
-                      {" "}
-                      - {item?.text}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
-              Tools
-            </h3>
-            <div>
-              {tools.map((item: DataItem, index) => {
-                const Icon = item?.icon;
-                return (
-                  <div className="flex items-center ml-3 py-3">
-                    <Link to={item?.url} className="flex items-center">
-                      <Icon
-                        color={item?.color}
-                        className={`lg:text-3xl text-2xl`}
-                      />
-                      <h3 className="lg:text-lg text-base underline text-[#FF3E26] font-anon pl-3">
-                        {item?.tech}
-                      </h3>
-                    </Link>
-                    <p className="lg:text-lg text-base text-zinc-500 pl-2">
-                      {" "}
-                      - {item?.text}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            {/* <h3 className="font-play font-extrabold pt-9 lg:text-3xl text-xl text-black/70 basis-1/2 leading-[48px]">
-              Gadgets
-            </h3>
-            <div>
-              {gadgets.map((item: DataItem, index) => {
-                const Icon = item?.icon;
-                return (
-                  <div className="flex items-center ml-3 py-3">
-                    <Link to={item?.url} className="flex items-center">
-                      <Icon
-                        color={item?.color}
-                        className={`lg:text-3xl text-2xl`}
-                      />
-                      <h3 className="lg:text-lg text-base underline text-[#FF3E26] font-anon pl-3">
-                        {item?.tech}
-                      </h3>
-                    </Link>
-                    <p className="lg:text-lg text-base text-zinc-500 pl-2">
-                      {" "}
-                      - {item?.text}
-                    </p>
-                  </div>
-                );
-              })}
-            </div> */}
           </div>
-          <div className="">
-            <Image />
+
+          {/* Right Column - Technologies & Tools */}
+          <div className="space-y-12">
+            {/* Technologies */}
+            <div className="space-y-6">
+              <h2
+                className={`text-2xl lg:text-3xl font-bold ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                Technologies
+              </h2>
+              <div className="grid gap-4">
+                {tech.map((item: DataItem, index) => {
+                  const Icon = item?.icon;
+                  return (
+                    <div
+                      key={index}
+                      className={`group rounded-md p-4 border hover:shadow-md transition-all duration-300 ${
+                        isDarkMode
+                          ? "bg-slate-800 border-slate-700 hover:border-slate-600"
+                          : "bg-white border-slate-200 hover:border-slate-300"
+                      }`}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="flex-shrink-0">
+                          <Icon color={item?.color} className="w-8 h-8" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3
+                            className={`font-semibold transition-colors ${
+                              isDarkMode
+                                ? "text-white group-hover:text-slate-200"
+                                : "text-slate-900 group-hover:text-slate-700"
+                            }`}
+                          >
+                            {item?.tech}
+                          </h3>
+                          <p
+                            className={`text-sm ${
+                              isDarkMode ? "text-slate-300" : "text-slate-600"
+                            }`}
+                          >
+                            {item?.text}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="space-y-6">
+              <h2
+                className={`text-2xl lg:text-3xl font-bold ${
+                  isDarkMode ? "text-white" : "text-slate-900"
+                }`}
+              >
+                Tools & Platforms
+              </h2>
+              <div className="grid gap-4">
+                {tools.map((item: DataItem, index) => {
+                  const Icon = item?.icon;
+                  return (
+                    <div
+                      key={index}
+                      className={`group rounded-md p-4 border hover:shadow-md transition-all duration-300 ${
+                        isDarkMode
+                          ? "bg-slate-800 border-slate-700 hover:border-slate-600"
+                          : "bg-white border-slate-200 hover:border-slate-300"
+                      }`}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="flex-shrink-0">
+                          <Icon color={item?.color} className="w-8 h-8" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3
+                            className={`font-semibold transition-colors ${
+                              isDarkMode
+                                ? "text-white group-hover:text-slate-200"
+                                : "text-slate-900 group-hover:text-slate-700"
+                            }`}
+                          >
+                            {item?.tech}
+                          </h3>
+                          <p
+                            className={`text-sm ${
+                              isDarkMode ? "text-slate-300" : "text-slate-600"
+                            }`}
+                          >
+                            {item?.text}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* CTA Card */}
+            <div
+              className={`rounded-2xl p-8 ${
+                isDarkMode
+                  ? "bg-gradient-to-br from-slate-800 to-slate-700 border border-slate-600"
+                  : "bg-gradient-to-br from-slate-900 to-slate-800"
+              } text-white`}
+            >
+              <h3 className="text-xl font-bold mb-4">
+                Let's Build Something Amazing
+              </h3>
+              <p className="text-slate-300 mb-6">
+                I'm always excited to work on new projects and collaborate with
+                talented teams. Let's discuss how we can bring your ideas to
+                life.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="mailto:o.davecodes@gmail.com"
+                  className="inline-flex items-center justify-center px-4 py-3 bg-primary-400 text-slate-900 font-medium rounded-md hover:bg-primary-300 transition-all duration-300"
+                >
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Get in Touch
+                </a>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                >
+                  View My Work
+                </Link>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                >
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  View Resume
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
