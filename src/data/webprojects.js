@@ -1,5 +1,5 @@
 import protishome from "../assets/images/protis-home.png";
-import cite from "../assets/images/cite.png";
+import shiga from "../assets/images/shiga.png";
 import portfolio from "../assets/images/portfolio.png";
 import ywb from "../assets/images/ywb.png";
 import pluginent from "../assets/images/pluginent.png";
@@ -70,11 +70,11 @@ export const webprojects = [
   },
   {
     id: 6,
-    text: "Cite Uniport",
-    url: "https://www.citeuniport.com/",
-    image: cite,
+    text: "Shiga.io",
+    url: "https://shiga-website-hasv.vercel.app/",
+    image: shiga,
     description: "",
-    stack: ["HTML", "CSS", "Javascript", "PHP"],
+    stack: ["Next.js", "Typescript", "Tailwind CSS", "Shadcn UI"],
     github: null,
   },
 ];
