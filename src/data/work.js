@@ -8,12 +8,12 @@ export const work = [
     company: "Protis Studios, Nigeria",
     role: "Engineering Lead",
     image: protis,
-    start: "OCT, 20 2022",
+    start: "OCT, 20 2023",
     end: "JUNE, 25 2025",
     status: 0,
     growth: "85%",
     description:
-      "Led technical strategy and engineering team of 8 developers, driving 85% growth in project delivery efficiency. Implemented modern development practices that reduced deployment time by 60% and increased client satisfaction scores by 40%. Spearheaded migration to cloud infrastructure, resulting in 70% cost reduction and 99.9% uptime. Mentored junior developers and established coding standards that improved code quality by 50%.",
+      "Led technical strategy and engineering team of 3 developers, driving 85% growth in project delivery efficiency. Implemented modern development practices that reduced deployment time by 60% and increased client satisfaction scores by 40%. Spearheaded migration to cloud infrastructure, resulting in 70% cost reduction and 99.9% uptime. Mentored junior developers and established coding standards that improved code quality by 50%.",
   },
   {
     id: 2,
