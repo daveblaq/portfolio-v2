@@ -6,7 +6,7 @@ export const work = [
   {
     id: 1,
     company: "Protis Studios, Nigeria",
-    role: "Engineering Lead",
+    role: "Engineering Lead - Full Time",
     image: protis,
     start: "OCT, 20 2023",
     end: "JUNE, 25 2025",

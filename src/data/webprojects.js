@@ -35,7 +35,7 @@ export const webprojects = [
   },
   {
     id: 3,
-    text: "Pluginent",
+    text: "Plugin Entertainment Limited",
     url: "https://pluginent.com/",
     image: pluginent,
     description: "",
