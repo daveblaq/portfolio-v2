@@ -6,22 +6,22 @@ function Hero() {
 
   return (
     <section
-      className={`pt-32 pb-16 transition-colors duration-300 ${
+      className={`pt-24 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 transition-colors duration-300 ${
         isDarkMode ? "bg-slate-900" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <div
-            className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-6 ${
+            className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-xs sm:text-sm font-medium mb-4 sm:mb-6 ${
               isDarkMode
                 ? "bg-primary-900/20 border-primary-400 text-primary-300"
                 : "bg-primary-50 border-primary-700 text-primary-700"
             }`}
           >
             <svg
-              className="w-4 h-4 mr-2"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ function Hero() {
 
           {/* Main Heading */}
           <h1
-            className={`text-4xl lg:text-5xl font-bold mb-6 ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 ${
               isDarkMode ? "text-white" : "text-slate-900"
             }`}
           >
@@ -47,7 +47,7 @@ function Hero() {
 
           {/* Description */}
           <p
-            className={`text-xl leading-relaxed mb-8 ${
+            className={`text-base sm:text-xl leading-relaxed mb-6 sm:mb-8 px-4 sm:px-0 ${
               isDarkMode ? "text-slate-300" : "text-slate-600"
             }`}
           >
@@ -57,23 +57,23 @@ function Hero() {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
             <div
-              className={`text-center p-6 rounded-2xl border ${
+              className={`text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl border ${
                 isDarkMode
                   ? "bg-slate-800 border-slate-700"
                   : "bg-slate-50 border-slate-200"
               }`}
             >
               <div
-                className={`text-3xl font-bold mb-2 ${
+                className={`text-2xl sm:text-3xl font-bold mb-2 ${
                   isDarkMode ? "text-primary-500" : "text-slate-900"
                 }`}
               >
                 25+
               </div>
               <div
-                className={`text-sm font-medium ${
+                className={`text-xs sm:text-sm font-medium ${
                   isDarkMode ? "text-slate-300" : "text-slate-600"
                 }`}
               >
@@ -81,21 +81,21 @@ function Hero() {
               </div>
             </div>
             <div
-              className={`text-center p-6 rounded-2xl border ${
+              className={`text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl border ${
                 isDarkMode
                   ? "bg-slate-800 border-slate-700"
                   : "bg-slate-50 border-slate-200"
               }`}
             >
               <div
-                className={`text-3xl font-bold mb-2 ${
+                className={`text-2xl sm:text-3xl font-bold mb-2 ${
                   isDarkMode ? "text-primary-500" : "text-slate-900"
                 }`}
               >
                 5+
               </div>
               <div
-                className={`text-sm font-medium ${
+                className={`text-xs sm:text-sm font-medium ${
                   isDarkMode ? "text-slate-300" : "text-slate-600"
                 }`}
               >
@@ -103,21 +103,21 @@ function Hero() {
               </div>
             </div>
             <div
-              className={`text-center p-6 rounded-2xl border ${
+              className={`text-center p-4 sm:p-6 rounded-xl sm:rounded-2xl border ${
                 isDarkMode
                   ? "bg-slate-800 border-slate-700"
                   : "bg-slate-50 border-slate-200"
               }`}
             >
               <div
-                className={`text-3xl font-bold mb-2 ${
+                className={`text-2xl sm:text-3xl font-bold mb-2 ${
                   isDarkMode ? "text-primary-500" : "text-slate-900"
                 }`}
               >
                 8+
               </div>
               <div
-                className={`text-sm font-medium ${
+                className={`text-xs sm:text-sm font-medium ${
                   isDarkMode ? "text-slate-300" : "text-slate-600"
                 }`}
               >

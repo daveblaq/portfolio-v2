@@ -50,15 +50,15 @@ const Loader: React.FC<LoaderProps> = ({ onComplete, duration = 2000 }) => {
         }`}
       >
         {/* Black header that loads from left to right */}
-        <div className="relative h-24 bg-primary-300">
+        <div className="relative h-16 sm:h-20 lg:h-24 bg-primary-300">
           <div
             className="absolute top-0 left-0 h-full bg-gradient-to-b from-slate-600 to-slate-900 transition-all duration-1000 ease-out"
             style={{ width: `${progress}%` }}
           >
-            <div className="flex items-center justify-between h-full px-8">
+            <div className="flex items-center justify-between h-full px-4 sm:px-6 lg:px-8">
               {/* Left side text */}
               <div
-                className={`font-bold text-lg uppercase tracking-wider ${
+                className={`font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wider ${
                   progress > 0 ? "text-white" : "text-slate-900"
                 }`}
               >
@@ -67,7 +67,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete, duration = 2000 }) => {
 
               {/* Right side text */}
               <div
-                className={`font-bold text-lg uppercase tracking-wider ${
+                className={`font-bold text-sm sm:text-base lg:text-lg uppercase tracking-wider ${
                   progress > 0 ? "text-white" : "text-slate-900"
                 }`}
               >
@@ -79,17 +79,17 @@ const Loader: React.FC<LoaderProps> = ({ onComplete, duration = 2000 }) => {
 
         {/* Orange content area - centered */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="mb-8">
+          <div className="text-center px-4 sm:px-8">
+            <div className="mb-6 sm:mb-8">
               <h1
-                className={`text-4xl font-bold mb-4 ${
+                className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 ${
                   isDarkMode ? "text-slate-100" : "text-slate-900"
                 }`}
               >
                 Loading...
               </h1>
               <p
-                className={`text-lg ${
+                className={`text-base sm:text-lg ${
                   isDarkMode ? "text-slate-300" : "text-slate-700"
                 }`}
               >
@@ -100,9 +100,9 @@ const Loader: React.FC<LoaderProps> = ({ onComplete, duration = 2000 }) => {
         </div>
 
         {/* Progress percentage in bottom right */}
-        <div className="absolute bottom-4 right-8">
+        <div className="absolute bottom-2 sm:bottom-4 right-4 sm:right-8">
           <span
-            className={`text-[10rem] font-extrabold opacity-20 ${
+            className={`text-[6rem] sm:text-[8rem] lg:text-[10rem] font-extrabold opacity-20 ${
               isDarkMode ? "text-slate-100" : "text-slate-900"
             }`}
           >

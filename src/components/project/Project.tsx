@@ -55,34 +55,40 @@ function Project() {
   const { isDarkMode } = useContext(DarkModeContext);
 
   return (
-    <section className={`py-16 transition-colors duration-300 ${
-      isDarkMode ? 'bg-slate-900' : 'bg-white'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section
+      className={`py-12 sm:py-16 transition-colors duration-300 ${
+        isDarkMode ? "bg-slate-900" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tab Navigation */}
-        <div className="flex flex-col sm:flex-row items-center justify-center mb-12">
-          <div className={`flex rounded-2xl p-2 shadow-sm border ${
-            isDarkMode
-              ? 'bg-slate-800 border-slate-700'
-              : 'bg-slate-100 border-slate-200'
-          }`}>
+        <div className="flex flex-col sm:flex-row items-center justify-center mb-8 sm:mb-12">
+          <div
+            className={`flex rounded-2xl p-2 shadow-sm border ${
+              isDarkMode
+                ? "bg-slate-800 border-slate-700"
+                : "bg-slate-100 border-slate-200"
+            }`}
+          >
             {tabs.map((item: DataItem, index) => (
-              <button
-                key={item.id}
-                onClick={() => setActive(item.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-md font-medium transition-all duration-300 ${
-                  item.id === active
-                    ? isDarkMode
-                      ? "bg-slate-700 text-white shadow-sm border border-primary-400"
-                      : "bg-white text-slate-900 shadow-sm border border-primary-200"
-                    : isDarkMode
-                      ? "text-slate-300 hover:text-white hover:bg-primary-900/10"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-primary-50"
-                }`}
-              >
-                {item.icon}
-                <span>{item.text}</span>
-              </button>
+                              <button
+                  key={item.id}
+                  onClick={() => setActive(item.id)}
+                  className={`flex items-center space-x-2 px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-300 text-sm sm:text-base ${
+                    item.id === active
+                      ? isDarkMode
+                        ? "bg-slate-700 text-white shadow-sm border border-primary-400"
+                        : "bg-white text-slate-900 shadow-sm border border-primary-200"
+                      : isDarkMode
+                        ? "text-slate-300 hover:text-white hover:bg-primary-900/10"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-primary-50"
+                  }`}
+                >
+                  <div className="w-4 h-4 sm:w-5 sm:h-5">
+                    {item.icon}
+                  </div>
+                  <span>{item.text}</span>
+                </button>
             ))}
           </div>
         </div>

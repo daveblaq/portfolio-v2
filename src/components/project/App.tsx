@@ -34,21 +34,21 @@ function App() {
 
     return (
       <div
-        className={`w-full p-6 rounded-2xl shadow-md flex flex-col items-center justify-between border transition-all duration-300 ${
+        className={`w-full p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-md flex flex-col items-center justify-between border transition-all duration-300 ${
           isDarkMode
             ? "bg-slate-800 border-slate-700 hover:border-primary-400"
             : "bg-white border-slate-200 hover:border-primary-200"
         }`}
       >
-        <div className="flex items-center justify-between w-full pb-5">
+        <div className="flex items-center justify-between w-full pb-4 sm:pb-5">
           <div className="flex items-center">
             <div
-              className={`rounded-full h-[60px] w-[60px] shadow-sm ${
+              className={`rounded-full h-[50px] w-[50px] sm:h-[60px] sm:w-[60px] shadow-sm ${
                 isDarkMode ? "bg-slate-700" : "bg-slate-100"
               }`}
             ></div>
             <h3
-              className={`font-extrabold text-xl basis-1/2 leading-[48px] pl-3 ${
+              className={`font-extrabold text-lg sm:text-xl basis-1/2 leading-[40px] sm:leading-[48px] pl-3 ${
                 isDarkMode ? "text-white" : "text-slate-900"
               }`}
             >
@@ -99,7 +99,7 @@ function App() {
         </div>
         <div>
           <p
-            className={`text-sm font-normal leading-relaxed pt-2 ${
+            className={`text-xs sm:text-sm font-normal leading-relaxed pt-2 ${
               isDarkMode ? "text-slate-300" : "text-slate-600"
             }`}
           >
@@ -108,7 +108,7 @@ function App() {
             you see something that piques your interest, check out the code and
             contribute if you have ideas on how it can be improved.
           </p>
-          <div className="py-2 w-full grid grid-cols-3 gap-2">
+          <div className="py-2 w-full grid grid-cols-3 gap-1.5 sm:gap-2">
             <div
               className={`px-2 py-1 rounded-full text-xs flex items-center justify-center font-medium ${
                 isDarkMode
@@ -137,7 +137,7 @@ function App() {
               Redux
             </div>
           </div>
-          <div className="pt-2 flex items-center gap-4">
+          <div className="pt-2 flex items-center gap-3 sm:gap-4">
             <IconButton icon={FaGooglePlay} text="Playstore" />
             <IconButton icon={FaApple} text="AppStore" />
           </div>
@@ -147,15 +147,15 @@ function App() {
   };
 
   return (
-    <div className="py-10 w-full">
-      <div className="flex flex-col items-center justify-center py-20">
+    <div className="py-8 sm:py-10 w-full">
+      <div className="flex flex-col items-center justify-center py-16 sm:py-20">
         <div
-          className={`w-24 h-24 rounded-full flex items-center justify-center mb-6 ${
+          className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center mb-4 sm:mb-6 ${
             isDarkMode ? "bg-slate-700" : "bg-slate-100"
           }`}
         >
           <svg
-            className={`w-12 h-12 ${
+            className={`w-10 h-10 sm:w-12 sm:h-12 ${
               isDarkMode ? "text-slate-400" : "text-slate-500"
             }`}
             fill="none"
@@ -171,31 +171,32 @@ function App() {
           </svg>
         </div>
         <h3
-          className={`text-2xl font-bold mb-3 ${
+          className={`text-xl sm:text-2xl font-bold mb-2 sm:mb-3 ${
             isDarkMode ? "text-white" : "text-slate-900"
           }`}
         >
           No Mobile Projects Yet
         </h3>
         <p
-          className={`text-lg text-center max-w-md mb-8 ${
+          className={`text-base sm:text-lg text-center max-w-md mb-6 sm:mb-8 px-4 sm:px-0 ${
             isDarkMode ? "text-slate-300" : "text-slate-600"
           }`}
         >
           Projects will appear here once they're added. Check back soon for
           updates!
         </p>
-        <div className="flex gap-4">
-          <button
-            className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
+        <div className="flex gap-3 sm:gap-4">
+          <a
+            href="mailto:o.davecodes@gmail.com"
+            className={`px-5 sm:px-6 py-2.5 sm:py-3 rounded-md font-medium transition-all duration-300 text-sm sm:text-base ${
               isDarkMode
                 ? "bg-primary-400 text-slate-900 hover:bg-primary-300"
                 : "bg-primary-300 text-slate-900 hover:bg-primary-400"
             }`}
           >
-            Add Project
-          </button>
-          <button
+            Contact Me
+          </a>
+          {/* <button
             className={`px-6 py-3 border-2 rounded-md font-medium transition-all duration-300 ${
               isDarkMode
                 ? "border-slate-600 text-slate-300 hover:border-slate-500 hover:bg-slate-800/50"
@@ -203,7 +204,7 @@ function App() {
             }`}
           >
             Contact Me
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

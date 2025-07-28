@@ -33,27 +33,27 @@ function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-36">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-28 lg:py-36">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 border border-primary-700 text-primary-700 text-sm font-medium dark:bg-primary-900/20 dark:border-primary-400 dark:text-primary-300">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-primary-50 border border-primary-700 text-primary-700 text-xs sm:text-sm font-medium dark:bg-primary-900/20 dark:border-primary-400 dark:text-primary-300">
               <div className="w-2 h-2 bg-primary-300 rounded-full mr-2 animate-pulse"></div>
               Available for new opportunities
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <h1
-                className={`text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight ${
+                className={`text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
                 Software Engineer
               </h1>
               <p
-                className={`text-xl lg:text-2xl font-light leading-relaxed max-w-2xl ${
+                className={`text-lg sm:text-xl lg:text-2xl font-light leading-relaxed max-w-2xl mx-auto lg:mx-0 ${
                   isDarkMode ? "text-slate-300" : "text-slate-600"
                 }`}
               >
@@ -85,14 +85,14 @@ function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center px-4 py-4 bg-primary-300 border-2 border-gray-800 text-slate-900 font-medium rounded-md hover:bg-primary-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 dark:border-primary-400 dark:text-slate-900"
+                className="inline-flex items-center justify-center px-6 sm:px-4 py-3 sm:py-4 bg-primary-300 border-2 border-gray-800 text-slate-900 font-medium rounded-md hover:bg-primary-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 dark:border-primary-400 dark:text-slate-900"
               >
                 View My Work
                 <svg
-                  className="ml-2 w-5 h-5"
+                  className="ml-2 w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -119,14 +119,14 @@ function Hero() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center px-4 py-4 border-2 font-medium rounded-md transition-all duration-300 ${
+                className={`inline-flex items-center justify-center px-6 sm:px-4 py-3 sm:py-4 border-2 font-medium rounded-md transition-all duration-300 ${
                   isDarkMode
                     ? "border-slate-600 text-slate-300 hover:border-slate-500 hover:bg-slate-800/50"
                     : "border-slate-300 text-slate-600 hover:border-slate-400 hover:bg-slate-50"
                 }`}
               >
                 <svg
-                  className="mr-2 w-5 h-5"
+                  className="mr-2 w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -143,7 +143,7 @@ function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="pt-8">
+            <div className="pt-6 sm:pt-8">
               <p
                 className={`text-sm font-medium mb-4 ${
                   isDarkMode ? "text-slate-400" : "text-slate-500"
@@ -151,7 +151,7 @@ function Hero() {
               >
                 Connect with me
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
                 {socials.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
@@ -160,21 +160,21 @@ function Hero() {
                       href={item?.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group flex items-center px-4 py-2 rounded-lg border transition-all duration-300 ${
+                      className={`group flex items-center px-3 sm:px-4 py-2 rounded-lg border transition-all duration-300 ${
                         isDarkMode
                           ? "bg-slate-800 border-slate-700 hover:border-primary-400 hover:shadow-md"
                           : "bg-white border-slate-200 hover:border-primary-200 hover:shadow-md"
                       }`}
                     >
                       <Icon
-                        className={`w-5 h-5 transition-colors ${
+                        className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${
                           isDarkMode
                             ? "text-slate-400 group-hover:text-primary-400"
                             : "text-slate-600 group-hover:text-primary-600"
                         }`}
                       />
                       <span
-                        className={`ml-2 text-sm font-medium transition-colors ${
+                        className={`ml-2 text-xs sm:text-sm font-medium transition-colors ${
                           isDarkMode
                             ? "text-slate-300 group-hover:text-primary-300"
                             : "text-slate-700 group-hover:text-primary-700"
@@ -291,15 +291,15 @@ function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="flex flex-col items-center space-y-2">
           <div
-            className={`w-6 h-10 border-2 rounded-full flex justify-center ${
+            className={`w-5 h-8 sm:w-6 sm:h-10 border-2 rounded-full flex justify-center ${
               isDarkMode ? "border-slate-600" : "border-slate-300"
             }`}
           >
             <div
-              className={`w-1 h-3 rounded-full mt-2 animate-bounce ${
+              className={`w-1 h-2 sm:h-3 rounded-full mt-1 sm:mt-2 animate-bounce ${
                 isDarkMode ? "bg-slate-500" : "bg-slate-400"
               }`}
             ></div>

@@ -19,22 +19,22 @@ function Hero() {
 
   return (
     <section
-      className={`py-24 transition-colors duration-300 ${
+      className={`py-20 sm:py-20 lg:py-24 transition-colors duration-300 ${
         isDarkMode ? "bg-slate-900" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center my-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div
-            className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium mb-6 ${
+            className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-xs sm:text-sm font-medium mb-4 sm:mb-6 ${
               isDarkMode
                 ? "bg-primary-900/20 border-primary-400 text-primary-300"
                 : "bg-primary-50 border-primary-700 text-primary-700"
             }`}
           >
             <svg
-              className="w-4 h-4 mr-2"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -49,14 +49,14 @@ function Hero() {
             About Me
           </div>
           <h1
-            className={`text-4xl lg:text-5xl font-bold mb-6 ${
+            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 ${
               isDarkMode ? "text-white" : "text-slate-900"
             }`}
           >
             Crafting Digital Experiences
           </h1>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed ${
+            className={`text-base sm:text-xl max-w-3xl mx-auto leading-relaxed px-4 sm:px-0 ${
               isDarkMode ? "text-slate-300" : "text-slate-600"
             }`}
           >
@@ -65,13 +65,13 @@ function Hero() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column - Content */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Personal Story */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
-                className={`text-2xl lg:text-3xl font-bold ${
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
@@ -79,7 +79,7 @@ function Hero() {
               </h2>
               <div className="prose prose-slate max-w-none dark:prose-invert">
                 <p
-                  className={`text-lg leading-relaxed ${
+                  className={`text-base sm:text-lg leading-relaxed ${
                     isDarkMode ? "text-slate-300" : "text-slate-600"
                   }`}
                 >
@@ -102,25 +102,25 @@ function Hero() {
             </div>
 
             {/* Education */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
-                className={`text-2xl lg:text-3xl font-bold ${
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
                 Education
               </h2>
               <div
-                className={`rounded-2xl p-6 border ${
+                className={`rounded-xl sm:rounded-2xl p-4 sm:p-6 border ${
                   isDarkMode
                     ? "bg-gradient-to-r from-slate-800 to-slate-700 border-slate-600"
                     : "bg-gradient-to-r from-slate-50 to-slate-100 border-slate-200"
                 }`}
               >
-                <div className="flex items-start space-x-4">
+                <div className="flex items-start space-x-3 sm:space-x-4">
                   <div className="flex-shrink-0">
                     <div
-                      className={`w-16 h-16 rounded-2xl border-2 shadow-sm flex items-center justify-center overflow-hidden ${
+                      className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border-2 shadow-sm flex items-center justify-center overflow-hidden ${
                         isDarkMode
                           ? "bg-slate-800 border-slate-600"
                           : "bg-white border-slate-200"
@@ -129,27 +129,27 @@ function Hero() {
                       <img
                         src={uniuyo}
                         alt="University of Uyo"
-                        className="w-12 h-12 object-cover rounded-lg"
+                        className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-lg"
                       />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3
-                      className={`text-lg font-bold mb-1 ${
+                      className={`text-base sm:text-lg font-bold mb-1 ${
                         isDarkMode ? "text-white" : "text-slate-900"
                       }`}
                     >
                       B.Sc.(Ed.) Computer and Robotics Education
                     </h3>
                     <p
-                      className={`mb-2 ${
+                      className={`mb-2 text-sm sm:text-base ${
                         isDarkMode ? "text-slate-300" : "text-slate-600"
                       }`}
                     >
                       University of Uyo, Nigeria
                     </p>
                     <p
-                      className={`text-sm ${
+                      className={`text-xs sm:text-sm ${
                         isDarkMode ? "text-slate-400" : "text-slate-500"
                       }`}
                     >
@@ -161,31 +161,31 @@ function Hero() {
             </div>
 
             {/* Core Skills */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
-                className={`text-2xl lg:text-3xl font-bold ${
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
                 Core Skills
               </h2>
-              <div className="grid gap-4">
+              <div className="grid gap-3 sm:gap-4">
                 <div
-                  className={`rounded-md p-6 border shadow-sm ${
+                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
                     isDarkMode
                       ? "bg-slate-800 border-slate-700"
                       : "bg-white border-slate-200"
                   }`}
                 >
                   <h3
-                    className={`font-semibold mb-2 ${
+                    className={`font-semibold mb-2 text-sm sm:text-base ${
                       isDarkMode ? "text-white" : "text-slate-900"
                     }`}
                   >
                     Attention to Detail
                   </h3>
                   <p
-                    className={`text-sm ${
+                    className={`text-xs sm:text-sm ${
                       isDarkMode ? "text-slate-300" : "text-slate-600"
                     }`}
                   >
@@ -194,21 +194,21 @@ function Hero() {
                   </p>
                 </div>
                 <div
-                  className={`rounded-md p-6 border shadow-sm ${
+                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
                     isDarkMode
                       ? "bg-slate-800 border-slate-700"
                       : "bg-white border-slate-200"
                   }`}
                 >
                   <h3
-                    className={`font-semibold mb-2 ${
+                    className={`font-semibold mb-2 text-sm sm:text-base ${
                       isDarkMode ? "text-white" : "text-slate-900"
                     }`}
                   >
                     Communication
                   </h3>
                   <p
-                    className={`text-sm ${
+                    className={`text-xs sm:text-sm ${
                       isDarkMode ? "text-slate-300" : "text-slate-600"
                     }`}
                   >
@@ -218,21 +218,21 @@ function Hero() {
                   </p>
                 </div>
                 <div
-                  className={`rounded-md p-6 border shadow-sm ${
+                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
                     isDarkMode
                       ? "bg-slate-800 border-slate-700"
                       : "bg-white border-slate-200"
                   }`}
                 >
                   <h3
-                    className={`font-semibold mb-2 ${
+                    className={`font-semibold mb-2 text-sm sm:text-base ${
                       isDarkMode ? "text-white" : "text-slate-900"
                     }`}
                   >
                     Problem Solving
                   </h3>
                   <p
-                    className={`text-sm ${
+                    className={`text-xs sm:text-sm ${
                       isDarkMode ? "text-slate-300" : "text-slate-600"
                     }`}
                   >
@@ -245,17 +245,17 @@ function Hero() {
           </div>
 
           {/* Right Column - Technologies & Tools */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Technologies */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
-                className={`text-2xl lg:text-3xl font-bold ${
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
                 Technologies
               </h2>
-              <div className="grid gap-4">
+              <div className="grid gap-3 sm:gap-4">
                 {tech.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
@@ -297,15 +297,15 @@ function Hero() {
             </div>
 
             {/* Tools */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <h2
-                className={`text-2xl lg:text-3xl font-bold ${
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
                 }`}
               >
                 Tools & Platforms
               </h2>
-              <div className="grid gap-4">
+              <div className="grid gap-3 sm:gap-4">
                 {tools.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
@@ -348,24 +348,24 @@ function Hero() {
 
             {/* CTA Card */}
             <div
-              className={`rounded-2xl p-8 ${
+              className={`rounded-xl sm:rounded-2xl p-6 sm:p-8 ${
                 isDarkMode
                   ? "bg-gradient-to-br from-slate-800 to-slate-700 border border-slate-600"
                   : "bg-gradient-to-br from-slate-900 to-slate-800"
               } text-white`}
             >
-              <h3 className="text-xl font-bold mb-4">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
                 Let's Build Something Amazing
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 mb-4 sm:mb-6 text-sm sm:text-base">
                 I'm always excited to work on new projects and collaborate with
                 talented teams. Let's discuss how we can bring your ideas to
                 life.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="mailto:o.davecodes@gmail.com"
-                  className="inline-flex items-center justify-center px-4 py-3 bg-primary-400 text-slate-900 font-medium rounded-md hover:bg-primary-300 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 sm:px-4 py-3 bg-primary-400 text-slate-900 font-medium rounded-md hover:bg-primary-300 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -384,7 +384,7 @@ function Hero() {
                 </a>
                 <Link
                   to="/projects"
-                  className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 sm:px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
                 >
                   View My Work
                 </Link>
@@ -392,7 +392,7 @@ function Hero() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-6 sm:px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
