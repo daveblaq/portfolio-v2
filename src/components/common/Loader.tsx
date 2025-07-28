@@ -52,7 +52,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete, duration = 2000 }) => {
         {/* Black header that loads from left to right */}
         <div className="relative h-20 bg-primary-300">
           <div
-            className="absolute top-0 left-0 h-full bg-black transition-all duration-1000 ease-out"
+            className="absolute top-0 left-0 h-full bg-gradient-to-b from-slate-600 to-slate-900 transition-all duration-1000 ease-out"
             style={{ width: `${progress}%` }}
           >
             <div className="flex items-center justify-between h-full px-8">
