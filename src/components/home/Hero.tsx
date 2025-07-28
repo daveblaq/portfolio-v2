@@ -245,7 +245,7 @@ function Hero() {
                     >
                       <div
                         className={`text-2xl font-bold ${
-                          isDarkMode ? "text-white" : "text-slate-900"
+                          isDarkMode ? "text-primary-500" : "text-slate-900"
                         }`}
                       >
                         5+
@@ -265,7 +265,7 @@ function Hero() {
                     >
                       <div
                         className={`text-2xl font-bold ${
-                          isDarkMode ? "text-white" : "text-slate-900"
+                          isDarkMode ? "text-primary-500" : "text-slate-900"
                         }`}
                       >
                         25+
