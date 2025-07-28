@@ -3,7 +3,7 @@ import cite from "../assets/images/cite.png";
 import portfolio from "../assets/images/portfolio.png";
 import ywb from "../assets/images/ywb.png";
 import pluginent from "../assets/images/pluginent.png";
-
+import wfunded from "../assets/images/wfunded.png";
 export const webprojects = [
   {
     id: 1,
@@ -20,11 +20,21 @@ export const webprojects = [
       "Node.js",
       "Express",
       "MongoDB",
+      "Framer Motion",
     ],
     github: null,
   },
   {
     id: 2,
+    text: "Wfunded.io",
+    url: "https://www.wfunded.io/en",
+    image: wfunded,
+    description: "",
+    stack: ["Node.js", "Express", "MongoDB", "Typescript"],
+    github: null,
+  },
+  {
+    id: 3,
     text: "Pluginent",
     url: "https://pluginent.com/",
     image: pluginent,
@@ -41,7 +51,7 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 2,
+    id: 4,
     text: "Portfolio V2",
     url: "https://oladeledavid.codes",
     image: portfolio,
@@ -50,16 +60,16 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 3,
+    id: 5,
     text: "Protis Studios",
     url: "https://protishq.com",
     image: protishome,
     description: "",
-    stack: ["React", "Tailwind CSS", "CSS"],
+    stack: ["React", "Tailwind CSS", "CSS", "Framer Motion"],
     github: null,
   },
   {
-    id: 4,
+    id: 6,
     text: "Cite Uniport",
     url: "https://www.citeuniport.com/",
     image: cite,

@@ -1,5 +1,3 @@
-
-
 :root {
   margin: 0;
   padding: 0;
@@ -37,22 +35,28 @@ Link {
   all: unset;
 }
 
+/* Custom text selection colors */
+::selection {
+  background-color: #c8d627; /* primary-300 color */
+  color: #0f172a; /* slate-900 for black text */
+}
+
+::-moz-selection {
+  background-color: #c8d627; /* primary-300 color */
+  color: #0f172a; /* slate-900 for black text */
+}
 
 /* Start Work Experience */
 .experience::before {
-  background: url('./assets/images/prop.png') no-repeat;
+  background: url("./assets/images/prop.png") no-repeat;
   position: absolute;
-/* margin-top: 6px; */
-content: '';
-height: 242px;
-width: 242px;
-top:950px;
-right:-35px;
-z-index: 100;
+  /* margin-top: 6px; */
+  content: "";
+  height: 242px;
+  width: 242px;
+  top: 950px;
+  right: -35px;
+  z-index: 100;
 }
 
 /* End Work Experience */
-
-
-
-

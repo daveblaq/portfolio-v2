@@ -5,7 +5,7 @@ import lamba from "../assets/images/lambatoken.jpg";
 export const work = [
   {
     id: 1,
-    company: "Protis Studios",
+    company: "Protis Studios, Nigeria",
     role: "Engineering Lead",
     image: protis,
     start: "OCT, 20 2022",
@@ -16,7 +16,7 @@ export const work = [
   },
   {
     id: 2,
-    company: "Maalexi",
+    company: "Maalexi, UAE",
     role: "Frontend Developer - Contract",
     image: maalexi,
     start: "JAN, 15 2023",
@@ -27,7 +27,7 @@ export const work = [
   },
   {
     id: 3,
-    company: "Lambabros Deals",
+    company: "Lambabros Deals, Nigeria",
     role: "Frontend Developer - Full Time",
     image: lamba,
     start: "NOV, 05 2021",
