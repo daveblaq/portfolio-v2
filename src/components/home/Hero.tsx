@@ -116,7 +116,7 @@ function Hero() {
                 Learn More
               </Link> */}
               <a
-                href="/resume.pdf"
+                href="https://docs.google.com/document/d/1XWX47CVGRfzvwBI0PRL5QIVeXgakfwbxg1QhBlCkw98/edit?tab=t.0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center justify-center px-6 sm:px-4 py-3 sm:py-4 border-2 font-medium rounded-md transition-all duration-300 ${
