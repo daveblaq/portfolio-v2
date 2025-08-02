@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import { tech } from "../../data/tech";
 import { tools } from "../../data/tools";
 import { Link } from "react-router-dom";
@@ -17,6 +18,32 @@ interface DataItem {
 function Hero() {
   const { isDarkMode } = useContext(DarkModeContext);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
     <section
       className={`py-20 sm:py-20 lg:py-24 transition-colors duration-300 ${
@@ -25,7 +52,13 @@ function Hero() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12">
+        <motion.div
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center mb-8 sm:mb-12"
+        >
           <div
             className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-xs sm:text-sm font-medium mb-4 sm:mb-6 ${
               isDarkMode
@@ -63,13 +96,22 @@ function Hero() {
             A passionate software engineer with a love for clean code, beautiful
             interfaces, and solving complex problems through elegant solutions.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start"
+        >
           {/* Left Column - Content */}
           <div className="space-y-8 sm:space-y-12">
             {/* Personal Story */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <h2
                 className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -99,10 +141,13 @@ function Hero() {
                   problems and feel intuitive to use.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Education */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <h2
                 className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -110,7 +155,8 @@ function Hero() {
               >
                 Education
               </h2>
-              <div
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
                 className={`rounded-xl sm:rounded-2xl p-4 sm:p-6 border ${
                   isDarkMode
                     ? "bg-gradient-to-r from-slate-800 to-slate-700 border-slate-600"
@@ -157,11 +203,14 @@ function Hero() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Core Skills */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <h2
                 className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -170,84 +219,59 @@ function Hero() {
                 Core Skills
               </h2>
               <div className="grid gap-3 sm:gap-4">
-                <div
-                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
-                    isDarkMode
-                      ? "bg-slate-800 border-slate-700"
-                      : "bg-white border-slate-200"
-                  }`}
-                >
-                  <h3
-                    className={`font-semibold mb-2 text-sm sm:text-base ${
-                      isDarkMode ? "text-white" : "text-slate-900"
+                {[
+                  {
+                    title: "Attention to Detail",
+                    description:
+                      "I am meticulous when it comes to deliverables, ensuring every pixel and line of code meets the highest standards.",
+                  },
+                  {
+                    title: "Communication",
+                    description:
+                      "I facilitate regular team meetings, provide project updates to stakeholders, and serve as a central point of contact for project-related matters.",
+                  },
+                  {
+                    title: "Problem Solving",
+                    description:
+                      "I approach complex challenges with analytical thinking and creative solutions, always focusing on the user experience.",
+                  },
+                ].map((skill, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    className={`rounded-md p-4 sm:p-6 border shadow-sm ${
+                      isDarkMode
+                        ? "bg-slate-800 border-slate-700"
+                        : "bg-white border-slate-200"
                     }`}
                   >
-                    Attention to Detail
-                  </h3>
-                  <p
-                    className={`text-xs sm:text-sm ${
-                      isDarkMode ? "text-slate-300" : "text-slate-600"
-                    }`}
-                  >
-                    I am meticulous when it comes to deliverables, ensuring
-                    every pixel and line of code meets the highest standards.
-                  </p>
-                </div>
-                <div
-                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
-                    isDarkMode
-                      ? "bg-slate-800 border-slate-700"
-                      : "bg-white border-slate-200"
-                  }`}
-                >
-                  <h3
-                    className={`font-semibold mb-2 text-sm sm:text-base ${
-                      isDarkMode ? "text-white" : "text-slate-900"
-                    }`}
-                  >
-                    Communication
-                  </h3>
-                  <p
-                    className={`text-xs sm:text-sm ${
-                      isDarkMode ? "text-slate-300" : "text-slate-600"
-                    }`}
-                  >
-                    I facilitate regular team meetings, provide project updates
-                    to stakeholders, and serve as a central point of contact for
-                    project-related matters.
-                  </p>
-                </div>
-                <div
-                  className={`rounded-md p-4 sm:p-6 border shadow-sm ${
-                    isDarkMode
-                      ? "bg-slate-800 border-slate-700"
-                      : "bg-white border-slate-200"
-                  }`}
-                >
-                  <h3
-                    className={`font-semibold mb-2 text-sm sm:text-base ${
-                      isDarkMode ? "text-white" : "text-slate-900"
-                    }`}
-                  >
-                    Problem Solving
-                  </h3>
-                  <p
-                    className={`text-xs sm:text-sm ${
-                      isDarkMode ? "text-slate-300" : "text-slate-600"
-                    }`}
-                  >
-                    I approach complex challenges with analytical thinking and
-                    creative solutions, always focusing on the user experience.
-                  </p>
-                </div>
+                    <h3
+                      className={`font-semibold mb-2 text-sm sm:text-base ${
+                        isDarkMode ? "text-white" : "text-slate-900"
+                      }`}
+                    >
+                      {skill.title}
+                    </h3>
+                    <p
+                      className={`text-xs sm:text-sm ${
+                        isDarkMode ? "text-slate-300" : "text-slate-600"
+                      }`}
+                    >
+                      {skill.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Technologies & Tools */}
           <div className="space-y-8 sm:space-y-12">
             {/* Technologies */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <h2
                 className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -259,8 +283,9 @@ function Hero() {
                 {tech.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
-                    <div
+                    <motion.div
                       key={index}
+                      whileHover={{ y: -2, scale: 1.02 }}
                       className={`group rounded-md p-4 border hover:shadow-md transition-all duration-300 ${
                         isDarkMode
                           ? "bg-slate-800 border-slate-700 hover:border-slate-600"
@@ -290,14 +315,17 @@ function Hero() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
 
             {/* Tools */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <h2
                 className={`text-xl sm:text-2xl lg:text-3xl font-bold ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -309,8 +337,9 @@ function Hero() {
                 {tools.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
-                    <div
+                    <motion.div
                       key={index}
+                      whileHover={{ y: -2, scale: 1.02 }}
                       className={`group rounded-md p-4 border hover:shadow-md transition-all duration-300 ${
                         isDarkMode
                           ? "bg-slate-800 border-slate-700 hover:border-slate-600"
@@ -340,14 +369,16 @@ function Hero() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA Card */}
-            <div
+            <motion.div
+              variants={cardVariants}
+              whileHover={{ y: -5, scale: 1.02 }}
               className={`rounded-xl sm:rounded-2xl p-6 sm:p-8 ${
                 isDarkMode
                   ? "bg-gradient-to-br from-slate-800 to-slate-700 border border-slate-600"
@@ -363,7 +394,9 @@ function Hero() {
                 life.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="mailto:o.davecodes@gmail.com"
                   className="inline-flex items-center justify-center px-6 sm:px-4 py-3 bg-primary-400 text-slate-900 font-medium rounded-md hover:bg-primary-300 transition-all duration-300"
                 >
@@ -381,14 +414,21 @@ function Hero() {
                     />
                   </svg>
                   Get in Touch
-                </a>
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center justify-center px-6 sm:px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                </motion.a>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  View My Work
-                </Link>
-                <a
+                  <Link
+                    to="/projects"
+                    className="inline-flex items-center justify-center px-6 sm:px-4 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-slate-900 transition-all duration-300"
+                  >
+                    View My Work
+                  </Link>
+                </motion.div>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://docs.google.com/document/d/1XWX47CVGRfzvwBI0PRL5QIVeXgakfwbxg1QhBlCkw98/edit?tab=t.0"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -408,11 +448,11 @@ function Hero() {
                     />
                   </svg>
                   View Resume
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

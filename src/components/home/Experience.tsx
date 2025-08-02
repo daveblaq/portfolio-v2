@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import { work } from "../../data/work";
 import { DarkModeContext } from "../../App";
 
@@ -22,16 +23,38 @@ interface ItemProps {
 function Experience() {
   const { isDarkMode } = useContext(DarkModeContext);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const Item: React.FC<ItemProps> = ({ item, index }) => {
     return (
-      <div className="relative group">
+      <motion.div variants={itemVariants} className="relative group">
         {/* Timeline Line */}
         <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gradient-to-b from-slate-200 to-transparent dark:from-slate-700"></div>
 
         <div className="relative flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
           {/* Company Logo */}
           <div className="relative flex-shrink-0 flex justify-center sm:justify-start">
-            <div
+            <motion.div
+              whileHover={{ scale: 1.05 }}
               className={`w-16 h-16 sm:w-12 sm:h-12 rounded-2xl border-2 shadow-lg flex items-center justify-center overflow-hidden group-hover:border-primary-200 transition-all duration-300 ${
                 isDarkMode
                   ? "bg-slate-800 border-slate-600"
@@ -43,15 +66,24 @@ function Experience() {
                 alt={item?.company}
                 className="w-10 h-10 sm:w-8 sm:h-8 object-cover rounded-lg"
               />
-            </div>
+            </motion.div>
             {item?.status === 1 && (
-              <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-4 sm:h-4 bg-primary-300 rounded-full border-2 border-white"></div>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -top-1 -right-1 w-5 h-5 sm:w-4 sm:h-4 bg-primary-300 rounded-full border-2 border-white"
+              ></motion.div>
             )}
           </div>
 
           {/* Content */}
           <div className="flex-1 min-w-0">
-            <div
+            <motion.div
+              whileHover={{
+                y: -5,
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              }}
               className={`rounded-2xl p-4 sm:p-6 shadow-sm border hover:shadow-md transition-all duration-300 group-hover:border-primary-200 ${
                 isDarkMode
                   ? "bg-slate-800 border-slate-700"
@@ -120,7 +152,13 @@ function Experience() {
                 {item?.description.split(". ").map(
                   (achievement, index) =>
                     achievement.trim() && (
-                      <div key={index} className="flex items-start space-x-3">
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex items-start space-x-3"
+                      >
                         <div className="flex-shrink-0 mt-2">
                           <div
                             className={`w-2 h-2 rounded-full ${
@@ -135,14 +173,16 @@ function Experience() {
                         >
                           {achievement.trim()}
                         </p>
-                      </div>
+                      </motion.div>
                     )
                 )}
               </div>
 
               {/* Status Badge */}
               {item?.status === 1 && (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   className={`mt-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${
                     isDarkMode
                       ? "bg-primary-900/20 text-primary-300 border-primary-400"
@@ -151,12 +191,12 @@ function Experience() {
                 >
                   <div className="w-2 h-2 bg-primary-300 rounded-full mr-2 animate-pulse"></div>
                   Current Position
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
@@ -168,7 +208,13 @@ function Experience() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <motion.div
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center mb-12 sm:mb-16"
+        >
           <div
             className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-xs sm:text-sm font-medium mb-4 sm:mb-6 ${
               isDarkMode
@@ -207,19 +253,31 @@ function Experience() {
             leadership roles, each experience shaping my expertise in software
             development.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="space-y-8 sm:space-y-12">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-8 sm:space-y-12"
+          >
             {work.map((item: DataItem, index) => (
               <Item key={item.id} item={item} index={index} />
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 sm:mt-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 sm:mt-20 text-center"
+        >
           <div
             className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 ${
               isDarkMode
@@ -243,7 +301,9 @@ function Experience() {
               projects. Let's create something amazing together.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="mailto:o.davecodes@gmail.com"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary-300 border-2 border-black text-slate-900 font-medium rounded-md hover:bg-primary-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 dark:border-primary-400"
               >
@@ -261,8 +321,10 @@ function Experience() {
                   />
                 </svg>
                 Get in Touch
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="/about-me"
                 className={`inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 font-medium rounded-md transition-all duration-300 ${
                   isDarkMode
@@ -271,10 +333,10 @@ function Experience() {
                 }`}
               >
                 Learn More About Me
-              </a>
+              </motion.a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

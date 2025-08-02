@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import { socials } from "../../data/socials";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../App";
@@ -13,10 +14,34 @@ interface DataItem {
 function Hero() {
   const { isDarkMode } = useContext(DarkModeContext);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: 0 },
+    visible: { opacity: 1, scale: 1, rotate: 3 },
+  };
+
   return (
     <section className="relative flex items-center justify-center overflow-hidden">
       {/* Background Pattern */}
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         className={`absolute inset-0 ${
           isDarkMode
             ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
@@ -30,21 +55,32 @@ function Hero() {
               : "bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)]"
           } bg-[length:20px_20px]`}
         ></div>
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 sm:py-28 lg:py-36">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center"
+        >
           {/* Left Column - Text Content */}
           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-primary-50 border border-primary-700 text-primary-700 text-xs sm:text-sm font-medium dark:bg-primary-900/20 dark:border-primary-400 dark:text-primary-300">
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-primary-50 border border-primary-700 text-primary-700 text-xs sm:text-sm font-medium dark:bg-primary-900/20 dark:border-primary-400 dark:text-primary-300"
+            >
               <div className="w-2 h-2 bg-primary-300 rounded-full mr-2 animate-pulse"></div>
               Available for new opportunities
-            </div>
+            </motion.div>
 
             {/* Main Heading */}
-            <div className="space-y-3 sm:space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-3 sm:space-y-4"
+            >
               <h1
                 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight ${
                   isDarkMode ? "text-white" : "text-slate-900"
@@ -60,10 +96,13 @@ function Hero() {
                 Crafting exceptional digital experiences with modern
                 technologies
               </p>
-            </div>
+            </motion.div>
 
             {/* Description */}
-            <div className="prose prose-slate max-w-none dark:prose-invert">
+            <motion.div
+              variants={itemVariants}
+              className="prose prose-slate max-w-none dark:prose-invert"
+            >
               <p
                 className={`text-lg leading-relaxed ${
                   isDarkMode ? "text-slate-300" : "text-slate-600"
@@ -78,14 +117,17 @@ function Hero() {
                   David Oladele
                 </span>
                 , I build simple, user-focused products that just work. Over the
-                past 5+ years, I’ve helped brands in fintech, entertainment,
+                past 5+ years, I've helped brands in fintech, entertainment,
                 edtech, and Web3 turn complex concepts into clean, functional,
                 and engaging digital experiences.
               </p>
-            </div>
+            </motion.div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4"
+            >
               <Link
                 to="/projects"
                 className="inline-flex items-center justify-center px-6 sm:px-4 py-3 sm:py-4 bg-primary-300 border-2 border-gray-800 text-slate-900 font-medium rounded-md hover:bg-primary-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 dark:border-primary-400 dark:text-slate-900"
@@ -105,16 +147,6 @@ function Hero() {
                   />
                 </svg>
               </Link>
-              {/* <Link
-                to="/about-me"
-                className={`inline-flex items-center justify-center px-4 py-4 border-2 font-medium rounded-md transition-all duration-300 ${
-                  isDarkMode
-                    ? "border-primary-400 text-slate-300 hover:border-primary-300 hover:bg-primary-900/20"
-                    : "border-primary-700 text-slate-700 hover:border-primary-300 hover:bg-primary-50"
-                }`}
-              >
-                Learn More
-              </Link> */}
               <a
                 href="https://docs.google.com/document/d/1XWX47CVGRfzvwBI0PRL5QIVeXgakfwbxg1QhBlCkw98/edit?tab=t.0"
                 target="_blank"
@@ -140,10 +172,10 @@ function Hero() {
                 </svg>
                 View Resume
               </a>
-            </div>
+            </motion.div>
 
             {/* Social Links */}
-            <div className="pt-6 sm:pt-8">
+            <motion.div variants={itemVariants} className="pt-6 sm:pt-8">
               <p
                 className={`text-sm font-medium mb-4 ${
                   isDarkMode ? "text-slate-400" : "text-slate-500"
@@ -155,11 +187,13 @@ function Hero() {
                 {socials.map((item: DataItem, index) => {
                   const Icon = item?.icon;
                   return (
-                    <a
+                    <motion.a
                       key={index}
                       href={item?.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       className={`group flex items-center px-3 sm:px-4 py-2 rounded-lg border transition-all duration-300 ${
                         isDarkMode
                           ? "bg-slate-800 border-slate-700 hover:border-primary-400 hover:shadow-md"
@@ -182,19 +216,24 @@ function Hero() {
                       >
                         {item?.text}
                       </span>
-                    </a>
+                    </motion.a>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Column - Visual Element */}
-          <div className="relative lg:block hidden">
+          <motion.div
+            variants={cardVariants}
+            className="relative lg:block hidden"
+          >
             <div className="relative">
               {/* Main Card */}
-              <div
-                className={`relative rounded-3xl shadow-2xl border p-4 transform rotate-3 hover:rotate-0 transition-transform duration-500 ${
+              <motion.div
+                whileHover={{ rotate: 0, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className={`relative rounded-3xl shadow-2xl border p-4 transform rotate-3 transition-transform duration-500 ${
                   isDarkMode
                     ? "bg-slate-800 border-slate-700"
                     : "bg-white border-slate-200"
@@ -280,18 +319,39 @@ function Hero() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary-300 rounded-2xl shadow-lg transform -rotate-12"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-primary-400 rounded-md shadow-lg transform rotate-12"></div>
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -top-4 -right-4 w-16 h-16 bg-primary-300 rounded-2xl shadow-lg transform -rotate-12"
+              ></motion.div>
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -bottom-4 -left-4 w-12 h-12 bg-primary-400 rounded-md shadow-lg transform rotate-12"
+              ></motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+      >
         <div className="flex flex-col items-center space-y-2">
           <div
             className={`w-5 h-8 sm:w-6 sm:h-10 border-2 rounded-full flex justify-center ${
@@ -312,7 +372,7 @@ function Hero() {
             Scroll to explore
           </span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

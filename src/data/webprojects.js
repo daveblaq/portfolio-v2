@@ -53,6 +53,15 @@ export const webprojects = [
   },
   {
     id: 4,
+    text: "Shiga.io",
+    url: "https://shiga-website-hasv.vercel.app/",
+    image: shiga,
+    description: "",
+    stack: ["Next.js", "Typescript", "Tailwind CSS", "Shadcn UI"],
+    github: null,
+  },
+  {
+    id: 5,
     text: "Global Asset University",
     url: "https://www.globalassetuniversity.com/",
     image: gau,
@@ -61,7 +70,7 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 5,
+    id: 6,
     text: "Portfolio V3",
     url: "https://oladeledavid.codes",
     image: portfolio,
@@ -70,21 +79,12 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 5,
+    id: 7,
     text: "Protis Studios",
     url: "https://protishq.com",
     image: protishome,
     description: "",
     stack: ["React", "Tailwind CSS", "CSS", "Framer Motion"],
-    github: null,
-  },
-  {
-    id: 6,
-    text: "Shiga.io",
-    url: "https://shiga-website-hasv.vercel.app/",
-    image: shiga,
-    description: "",
-    stack: ["Next.js", "Typescript", "Tailwind CSS", "Shadcn UI"],
     github: null,
   },
 ];

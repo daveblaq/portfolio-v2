@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Web from "./Web";
 import App from "./App";
 import { DarkModeContext } from "../../App";
@@ -54,6 +55,22 @@ function Project() {
   const [active, setActive] = useState(1);
   const { isDarkMode } = useContext(DarkModeContext);
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const tabVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 },
+  };
+
   return (
     <section
       className={`py-12 sm:py-16 transition-colors duration-300 ${
@@ -62,7 +79,13 @@ function Project() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Tab Navigation */}
-        <div className="flex flex-col sm:flex-row items-center justify-center mb-8 sm:mb-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row items-center justify-center mb-8 sm:mb-12"
+        >
           <div
             className={`flex rounded-2xl p-2 shadow-sm border ${
               isDarkMode
@@ -71,32 +94,43 @@ function Project() {
             }`}
           >
             {tabs.map((item: DataItem, index) => (
-                              <button
-                  key={item.id}
-                  onClick={() => setActive(item.id)}
-                  className={`flex items-center space-x-2 px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-300 text-sm sm:text-base ${
-                    item.id === active
-                      ? isDarkMode
-                        ? "bg-slate-700 text-white shadow-sm border border-primary-400"
-                        : "bg-white text-slate-900 shadow-sm border border-primary-200"
-                      : isDarkMode
-                        ? "text-slate-300 hover:text-white hover:bg-primary-900/10"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-primary-50"
-                  }`}
-                >
-                  <div className="w-4 h-4 sm:w-5 sm:h-5">
-                    {item.icon}
-                  </div>
-                  <span>{item.text}</span>
-                </button>
+              <motion.button
+                key={item.id}
+                variants={tabVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActive(item.id)}
+                className={`flex items-center space-x-2 px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-300 text-sm sm:text-base ${
+                  item.id === active
+                    ? isDarkMode
+                      ? "bg-slate-700 text-white shadow-sm border border-primary-400"
+                      : "bg-white text-slate-900 shadow-sm border border-primary-200"
+                    : isDarkMode
+                    ? "text-slate-300 hover:text-white hover:bg-primary-900/10"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-primary-50"
+                }`}
+              >
+                <div className="w-4 h-4 sm:w-5 sm:h-5">{item.icon}</div>
+                <span>{item.text}</span>
+              </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className="transition-all duration-500 ease-in-out">
-          {active === 1 ? <Web /> : <App />}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+            className="transition-all duration-500 ease-in-out"
+          >
+            {active === 1 ? <Web /> : <App />}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
