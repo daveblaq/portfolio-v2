@@ -4,6 +4,7 @@ import portfolio from "../assets/images/portfolio.png";
 import ywb from "../assets/images/ywb.png";
 import pluginent from "../assets/images/pluginent.png";
 import wfunded from "../assets/images/wfunded.png";
+import gau from "../assets/images/gau.png";
 export const webprojects = [
   {
     id: 1,
@@ -52,7 +53,16 @@ export const webprojects = [
   },
   {
     id: 4,
-    text: "Portfolio V2",
+    text: "Global Asset University",
+    url: "https://www.globalassetuniversity.com/",
+    image: gau,
+    description: "",
+    stack: ["Next.js", "Typescript", "Tailwind CSS", "Ether.js"],
+    github: null,
+  },
+  {
+    id: 5,
+    text: "Portfolio V3",
     url: "https://oladeledavid.codes",
     image: portfolio,
     description: "",
