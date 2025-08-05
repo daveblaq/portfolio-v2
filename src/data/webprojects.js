@@ -5,6 +5,7 @@ import ywb from "../assets/images/ywb.png";
 import pluginent from "../assets/images/pluginent.png";
 import wfunded from "../assets/images/wfunded.png";
 import gau from "../assets/images/gau.png";
+import mysubby from "../assets/images/mysubby.png";
 export const webprojects = [
   {
     id: 1,
@@ -53,6 +54,22 @@ export const webprojects = [
   },
   {
     id: 4,
+    text: "My Subby App",
+    url: "https://www.mysubbyapp.com/",
+    image: mysubby,
+    description: "",
+    stack: [
+      "Vue.js",
+      "Typescript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    github: null,
+  },
+  {
+    id: 5,
     text: "Shiga.io",
     url: "https://shiga-website-hasv.vercel.app/",
     image: shiga,
@@ -61,7 +78,7 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 5,
+    id: 6,
     text: "Global Asset University",
     url: "https://www.globalassetuniversity.com/",
     image: gau,
@@ -70,7 +87,7 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 6,
+    id: 7,
     text: "Portfolio V3",
     url: "https://oladeledavid.codes",
     image: portfolio,
@@ -79,7 +96,7 @@ export const webprojects = [
     github: null,
   },
   {
-    id: 7,
+    id: 8,
     text: "Protis Studios",
     url: "https://protishq.com",
     image: protishome,
