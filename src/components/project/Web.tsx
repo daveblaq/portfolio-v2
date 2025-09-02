@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { IconButton } from "../common/IconButton";
 import { RiGithubFill, RiExternalLinkLine } from "react-icons/ri";
-import { webprojects } from "../../data/webprojects";
+import { webprojects } from "../../data/webproj";
 import Image from "../common/Image";
 import { DarkModeContext } from "../../App";
 
